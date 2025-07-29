@@ -1,12 +1,12 @@
 import React from "react";
-import Logo from "../../assets/logo_Recovered.png";
-import BuyTheGameButton from "../../assets/Group.png"; // Ensure this image exists in your assets
+import Logo from "../../assets/IMG.png";
+import BuyTheGameButton from "../../assets/under_maintaince.png";
+import home from "../../assets/HOME.png"; // Home icon PNG
 import { HiMenuAlt1, HiMenuAlt3 } from "react-icons/hi";
 import DarkMode from "./DarkMode";
 
 const NavLinks = [
   { id: 1, name: "Home", link: "/" },
-  { id: 2, name: "Community", link: "/community" },
 ];
 
 const Navbar = () => {
@@ -15,19 +15,15 @@ const Navbar = () => {
 
   return (
     <div className="fixed top-0 left-0 w-full z-[9999] bg-black/40 backdrop-blur-md border-b border-white/10 text-white">
-      <div className="max-w-7xl mx-auto px-4 py-3 md:py-4 flex justify-between items-center">
-
+      <div className="max-w-7xl mx-auto px-4 py-1 md:py-1 flex justify-between items-center">
+        
         {/* 🔰 Logo Section */}
         <div className="flex items-center gap-3">
           <img
             src={Logo}
             alt="Revolver Rift Logo"
-            className="h-16 md:h-20" // Increased size here
+            className="h-28 -my-4 md:h-30 md:-my-3"
           />
-          <div className="text-sm leading-tight tracking-wide hidden sm:block">
-            <div className="font-semibold text-xs"></div>
-            <div className="text-[10px] tracking-widest"></div>
-          </div>
         </div>
 
         {/* 🖥 Desktop Navigation */}
@@ -37,16 +33,21 @@ const Navbar = () => {
               <li key={id}>
                 <a
                   href={link}
-                  className="text-lg font-medium hover:text-secondary border-b-2 border-transparent hover:border-red-500 transition"
+                  className="text-lg font-medium border-b-2 border-transparent hover:border-red-500 transition"
                 >
-                  {name}
+                  {/* Replacing Home text with PNG */}
+                  <img 
+                    src={home} 
+                    alt="Home" 
+                    className="h-8 w-auto hover:scale-110 transition-transform duration-200"
+                  />
                 </a>
               </li>
             ))}
             <DarkMode />
           </ul>
 
-          {/* 🟥 BUY THE GAME Image Button */}
+          {/* 🟥 Buy The Game Image Button */}
           <a href="#" className="ml-6">
             <img
               src={BuyTheGameButton}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./Components/Navbar/Navbar";
 import Hero from "./Components/Hero/Hero";
+import Hero2 from "./Components/Hero/Hero2";
 import Quotes from "./Components/Quotes/Quotes";
 import Banner from "./Components/Banner/Banner";
 import Banner2 from "./Components/Banner/Banner2";
@@ -33,14 +34,15 @@ const App = () => {
   return (
     <main className="overflow-x-hidden bg-white dark:bg-black text-black dark:text-white duration-300">
       <Navbar />
-      <Hero togglePlay={togglePlay} />
-      <Quotes />
-      <Banner togglePlay={togglePlay} />
+      {/* <Hero togglePlay={togglePlay} /> */}
+      <Hero2 togglePlay={togglePlay} />
+      {/* <Quotes /> */}
+      {/* <Banner togglePlay={togglePlay} />
       <Banner3 togglePlay={togglePlay} />
       <Banner2 togglePlay={togglePlay} />
   
       <Features />
-      <AppStore />
+      <AppStore /> */}
       <Footer />
 
       {/* Video Player */}
