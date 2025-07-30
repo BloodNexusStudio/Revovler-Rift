@@ -33,3 +33,7 @@
     transform: translate(40vw, 40vh) rotate(0deg) scale(0.8);
   }
 }
+@font-face {
+  font-family: 'CustomGameFont';
+  src: url('/src/assets/fonts/melma.cracked.ttf') format('truetype');
+}

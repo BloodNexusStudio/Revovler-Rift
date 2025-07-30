@@ -1,7 +1,7 @@
-import React from "react";
-import Logo from "../../assets/IMG.png";
+import React, { useState } from "react";
+import Logo from "../../assets/IMG_0985.png";
 import BuyTheGameButton from "../../assets/under_maintaince.png";
-import home from "../../assets/HOME.png"; // Home icon PNG
+import home from "../../assets/HOME.png";
 import { HiMenuAlt1, HiMenuAlt3 } from "react-icons/hi";
 import DarkMode from "./DarkMode";
 
@@ -10,64 +10,105 @@ const NavLinks = [
 ];
 
 const Navbar = () => {
-  const [showMenu, setShowMenu] = React.useState(false);
-  const toggleMenu = () => setShowMenu(!showMenu);
+  const [showMenu, setShowMenu] = useState(false);
+
+  const toggleMenu = () => {
+    setShowMenu((prev) => !prev);
+    document.body.style.overflow = showMenu ? "auto" : "hidden";
+  };
+
+  const handleLinkClick = () => {
+    setShowMenu(false);
+    document.body.style.overflow = "auto";
+  };
 
   return (
-    <div className="fixed top-0 left-0 w-full z-[9999] bg-black/40 backdrop-blur-md border-b border-white/10 text-white">
-      <div className="max-w-7xl mx-auto px-4 py-1 md:py-1 flex justify-between items-center">
-        
-        {/* 🔰 Logo Section */}
-        <div className="flex items-center gap-3">
+    <header className="fixed top-0 left-0 w-full z-[9999] bg-black/50 backdrop-blur-lg border-b border-white/10 text-white shadow-md">
+      <div className="w-full px-0 py-3 flex justify-between items-center">
+
+        {/* 🔰 Logo aligned to far left */}
+        <div className="flex items-center gap-8 pl-8">
           <img
-            src={Logo}
-            alt="Revolver Rift Logo"
-            className="h-28 -my-4 md:h-30 md:-my-3"
-          />
+           src={Logo}
+           alt="Revolver Rift Logo"
+          className="max-h-20 sm:max-h-24 md:max-h-28 scale-100 object-contain drop-shadow-md transition-transform duration-300"
+
+
+
+/>
+
         </div>
 
         {/* 🖥 Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
-          <ul className="flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-8 pr-4">
+          <ul className="flex items-center gap-6">
             {NavLinks.map(({ id, name, link }) => (
               <li key={id}>
-                <a
-                  href={link}
-                  className="text-lg font-medium border-b-2 border-transparent hover:border-red-500 transition"
-                >
-                  {/* Replacing Home text with PNG */}
-                  <img 
-                    src={home} 
-                    alt="Home" 
-                    className="h-8 w-auto hover:scale-110 transition-transform duration-200"
+                <a href={link} className="group">
+                  <img
+                    src={home}
+                    alt={name}
+                    className="h-8 w-auto transition-transform group-hover:scale-110 group-hover:drop-shadow-lg duration-300"
                   />
                 </a>
               </li>
             ))}
-            <DarkMode />
+            
           </ul>
 
-          {/* 🟥 Buy The Game Image Button */}
           <a href="#" className="ml-6">
+  <img
+    src={BuyTheGameButton}
+    alt="Buy the Game"
+    className="h-14 md:h-16 w-auto hover:scale-105 transition-transform duration-300 drop-shadow"
+  />
+</a>
+        </div>
+
+        {/* 📱 Mobile Menu Button */}
+        <div className="md:hidden flex items-center gap-2 pr-4">
+     
+          <button onClick={toggleMenu} aria-label="Menu Toggle">
+            {showMenu ? (
+              <HiMenuAlt1 size={30} className="transition-transform hover:scale-110" />
+            ) : (
+              <HiMenuAlt3 size={30} className="transition-transform hover:scale-110" />
+            )}
+          </button>
+        </div>
+      </div>
+
+      {/* 📱 Mobile Dropdown Menu */}
+      <div
+        className={`md:hidden fixed top-20 left-0 w-full bg-black/90 backdrop-blur-md border-t border-white/10 transition-all duration-300 ease-in-out ${
+          showMenu ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0 overflow-hidden"
+        }`}
+      >
+        <div className="flex flex-col items-center py-6 gap-6">
+          {NavLinks.map(({ id, name, link }) => (
+            <a
+              key={id}
+              href={link}
+              onClick={handleLinkClick}
+              className="block"
+            >
+              <img
+                src={home}
+                alt={name}
+                className="h-12 w-auto hover:scale-110 transition-transform duration-300"
+              />
+            </a>
+          ))}
+          <a href="#" onClick={handleLinkClick}>
             <img
               src={BuyTheGameButton}
               alt="Buy the Game"
-              className="h-10 md:h-12 w-auto hover:scale-105 transition-transform duration-300"
+              className="h-10 w-auto hover:scale-105 transition-transform duration-300"
             />
           </a>
-        </nav>
-
-        {/* 📱 Mobile Navigation */}
-        <div className="md:hidden flex items-center gap-4">
-          <DarkMode />
-          {showMenu ? (
-            <HiMenuAlt1 onClick={toggleMenu} className="cursor-pointer" size={30} />
-          ) : (
-            <HiMenuAlt3 onClick={toggleMenu} className="cursor-pointer" size={30} />
-          )}
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 
