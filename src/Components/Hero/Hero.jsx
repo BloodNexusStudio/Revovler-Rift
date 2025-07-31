@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import bgVideo from '../../assets/shot1.mp4';
 import crackedBox from '../../assets/image.png';
-import revolverTitle from '../../assets/IMG.png'; // ✅ Your updated logo image
+import revolverTitle from '../../assets/IMG.png';
 
 const HeroCountdown = () => {
   const calculateTimeLeft = () => {
@@ -39,15 +39,13 @@ const HeroCountdown = () => {
         playsInline
       />
 
-      {/* 🔳 Overlay */}
+      {/* 🔳 Overlays */}
       <div
         className="absolute inset-0 z-10"
         style={{
           background: 'linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.65))',
         }}
       />
-
-      {/* Vignette */}
       <div
         className="absolute inset-0 z-15 pointer-events-none"
         style={{
@@ -55,7 +53,7 @@ const HeroCountdown = () => {
         }}
       />
 
-      {/* Animations */}
+      {/* 🔄 Bounce Animation */}
       <style>{`
         @keyframes bounceDrop {
           0% {
@@ -78,26 +76,19 @@ const HeroCountdown = () => {
         }
       `}</style>
 
-      {/* 📜 Main Content */}
-      <div className="relative z-20 flex flex-col h-full px-4 text-center justify-start">
+      {/* 📜 Content */}
+      <div className="relative z-20 flex flex-col h-full px-[5vw] text-center justify-start">
         <div className="flex flex-col items-center w-full mt-[10vh]">
-          {/* 🖼️ Title Image with upward shift and smaller size */}
+          {/* 🖼️ Logo */}
           <img
             src={revolverTitle}
             alt="Revolver Rift Title"
-            className="w-[40%] md:w-[32%] max-w-xl mb-10 animate-fade-in"
+            className="w-[45vw] max-w-[500px] min-w-[250px] mb-10"
             style={{ animation: 'bounceDrop 1.2s ease-out forwards' }}
           />
 
-          {/* Divider
-          <div className="flex items-center justify-center mt-14 mb-4 gap-4 text-[#b5a891] text-2xl">
-            <span className="w-16 border-t border-[#b5a891]" />
-            <span className="font-bold">×</span>
-            <span className="w-16 border-t border-[#b5a891]" />
-          </div> */}
-
-          {/* ⏳ Countdown Boxes */}
-          <div className="flex flex-wrap justify-center gap-6 -mt-[15vh]">
+          {/* ⏳ Countdown */}
+          <div className="flex flex-wrap justify-center gap-6 -mt-[12vh]">
             {Object.entries(timeLeft).map(([unit, value], index) => (
               <div
                 key={unit}
@@ -110,15 +101,14 @@ const HeroCountdown = () => {
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   backgroundRepeat: 'no-repeat',
-                  backgroundBlendMode: 'overlay',
                   border: '1px solid rgba(165, 139, 111, 0.3)',
                   boxShadow: '0 4px 16px rgba(0, 0, 0, 0.4)',
                   animation: `bounceDrop 1s ease-out forwards`,
                   animationDelay: `${index * 0.25}s`,
                 }}
               >
-                <span className="text-4xl md:text-5xl text-[#f5ebd9] font-mono tracking-widest">{value}</span>
-                <span className="text-sm md:text-base uppercase text-[#e0d2bd] mt-2 tracking-wider">{unit}</span>
+                <span className="text-[2rem] sm:text-[2.5rem] text-[#f5ebd9] font-mono tracking-widest">{value}</span>
+                <span className="text-sm uppercase text-[#e0d2bd] mt-2 tracking-wider">{unit}</span>
               </div>
             ))}
           </div>
