@@ -4,7 +4,7 @@ import { BiPlayCircle } from "react-icons/bi";
 
 const Banner3 = ({ togglePlay }) => {
   return (
-    <div className="py-24 bg-transparent">
+    <div className="py-24 bg-black">
       <div className="container mx-auto flex flex-col-reverse sm:flex-row items-center justify-between gap-16 sm:gap-24">
 
         {/* Text Section */}
@@ -14,10 +14,7 @@ const Banner3 = ({ togglePlay }) => {
             data-aos-delay="300"
             className="text-4xl md:text-5xl font-vintage tracking-wide text-[#e4d6c3]"
           >
-            EXPERIENCE {" "}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
-              RIFT FIRST-HAND
-            </span>
+            EXPERIENCE {" "} RIFT FIRST-HAND
           </h1>
 
           <p

@@ -34,15 +34,15 @@ const App = () => {
   return (
     <main className="overflow-x-hidden bg-white dark:bg-black text-black dark:text-white duration-300">
       <Navbar />
-      {/* <Hero togglePlay={togglePlay} /> */}
-      <Hero2 togglePlay={togglePlay} />
-      {/* <Quotes /> */}
-      {/* <Banner togglePlay={togglePlay} />
+      <Hero togglePlay={togglePlay} /> 
+      {/* <Hero2 togglePlay={togglePlay} /> */}
+      <Quotes /> 
+      <Banner togglePlay={togglePlay} />
       <Banner3 togglePlay={togglePlay} />
       <Banner2 togglePlay={togglePlay} />
   
       <Features />
-      <AppStore /> */}
+      <AppStore /> 
       <Footer />
 
       {/* Video Player */}
