@@ -8,9 +8,9 @@ import {
 } from "react-icons/fa";
 
 // Correctly import images for modern build tools like Vite/CRA
-import BMLOGO from "../assets/newassets/BNLOGO.png";
-import STEAMLOGO from "../assets/newassets/STEAMLOGO.png";
-import UNREALLOGO from "../assets/newassets/UNREALLOGO.png";
+import BMLOGO from "../src/assets/newassets/BNLOGO.png";
+import STEAMLOGO from "../src/assets/newassets/STEAMLOGO.png";
+import UNREALLOGO from "../src/assets/newassets/UNREALLOGO.png";
 // import KAHR_NewLogo_V02 from "../assets/newassets/KAHR_NewLogo_V02.png"; // Uncomment if you want to use this logo
 
 const socialLinks = [
