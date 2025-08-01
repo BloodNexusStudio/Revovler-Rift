@@ -7,15 +7,9 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 
-// Correctly import images for modern build tools like Vite/CRA
-import BMLOGO from "../src/assets/newassets/BNLOGO.png";
-import STEAMLOGO from "../src/assets/newassets/STEAMLOGO.png";
-import UNREALLOGO from "../src/assets/newassets/UNREALLOGO.png";
-// import KAHR_NewLogo_V02 from "../assets/newassets/KAHR_NewLogo_V02.png"; // Uncomment if you want to use this logo
-
 const socialLinks = [
   { id: 1, icon: <FaRedditAlien size={36} />, label: "REDDIT", url: "https://www.reddit.com/user/RevolverRift/" },
-  { id: 2, icon: <FaYoutube size={36} />, label: "YOUTUBE", url: "https://www.youtube.com/@RevolverRift" }, // Corrected URL
+  { id: 2, icon: <FaYoutube size={36} />, label: "YOUTUBE", url: "https://www.youtube.com/@revolverrift" },
   { id: 3, icon: <FaTwitter size={36} />, label: "TWITTER", url: "https://x.com/RevolverRift" },
   { id: 4, icon: <FaFacebook size={36} />, label: "FACEBOOK", url: "https://www.facebook.com/revolverrift" },
   {
@@ -96,16 +90,17 @@ const Footer = () => {
         </div>
 
         {/* 4 Logos Section Above Copyright */}
-        <div className="flex justify-center items-center gap-12 mt-8 mb-4">
-          <img src={BMLOGO} alt="Logo" className="w-16 h-16" />
-          <img src={STEAMLOGO} alt="Steam Logo" className="w-16 h-16" />
-          <img src={UNREALLOGO} alt="Unreal Engine Logo" className="w-16 h-16" />
+        <div className="flex justify-center gap-12 mt-8 mb-4">
+          {/* <img src="../src/assets/newassets/KAHR_NewLogo_V02.png" alt="Logo 1" className="w-16 h-16" /> */}
+          <img src="../src/assets/logo/Logo2.png" alt="Logo 2" className="w-16 h-16" />
+          <img src="../src/assets/logo/Logo3.png" alt="Logo 3" className="w-16 h-16" />
+          <img src="../src/assets/logo/Logo4.png" alt="Logo 4" className="w-16 h-16" />
         </div>
 
         {/* Copyright */}
         <div className="w-full text-center mt-6 text-xs text-[#725640] tracking-widest">
           <a href="https://www.revolver-rift.com/" target="_blank" rel="noopener noreferrer">
-            © KAHRWORKS GMBH – All rights reserved.
+            &copy; KAHRWORKS GMBH – All rights reserved.
           </a>
         </div>
       </footer>
