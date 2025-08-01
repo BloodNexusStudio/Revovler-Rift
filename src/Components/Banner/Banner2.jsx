@@ -1,9 +1,10 @@
 import React from "react";
 import Slider from "react-slick";
 import Banner1 from "../../assets/SHot2.mp4"; // MP4
-import Banner2Img from "../../assets/shot2.1.png";
-import Banner3 from "../../assets/shot2.png";
-
+import Banner2Img from "../../assets/newassets/WINCHESTER1.png";
+import Banner3 from "../../assets/newassets/STG44LOGO.png";
+import Banner4 from "../../assets/newassets/7.png";
+import Banner5 from "../../assets/newassets/2.mp4";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -12,6 +13,8 @@ const banners = [
   { type: "video", src: Banner1 },
   { type: "image", src: Banner2Img },
   { type: "image", src: Banner3 },
+  { type: "image", src: Banner4 },
+{ type: "video", src: Banner5 }
 ];
 
 const Banner2 = () => {

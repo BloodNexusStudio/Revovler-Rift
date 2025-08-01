@@ -1,5 +1,5 @@
 import React from "react";
-import BannerPng from "../../assets/shot2.1.png";
+import BannerPng from "../../assets/newassets/9.png";
 import { BiPlayCircle } from "react-icons/bi";
 
 const Banner3 = ({ togglePlay }) => {
@@ -14,44 +14,43 @@ const Banner3 = ({ togglePlay }) => {
             data-aos-delay="300"
             className="text-4xl md:text-5xl font-vintage tracking-wide text-[#e4d6c3]"
           >
-            EXPERIENCE {" "} RIFT FIRST-HAND
-          </h1>
+            What Makes Revolver Rift Unique
+             </h1>
 
-          <p
-            data-aos="fade-up"
-            data-aos-delay="500"
-            className="text-lg md:text-xl leading-relaxed font-vintage text-[#d0c4b0]"
-          >
-            Step into a war-torn world where steel meets gunpowder, and the supernatural reshapes destiny. Witness the chaos, confront demon-warped enemies, and feel the fear bleed through the fog.
-          </p>
+         <div
+  data-aos="fade-up"
+  data-aos-delay="500"
+  className="text-lg md:text-xl leading-relaxed font-vintage text-[#d0c4b0]"
+>
+  <p>This is not your typical shooter:</p>
+  <ul className="list-disc list-inside mt-4 space-y-2">
+    <li>
+      <strong>Alternate History Warfare:</strong> Fight in a gritty, war-torn 1944 where the supernatural has collided with World War II.
+    </li>
+    <li>
+      <strong>Light vs. Darkness:</strong> Choose your side — the righteous Cleric Deputys or the brutal Cursed Hell Deputies. Each faction brings its own playstyle, Perks, and twisted morality.
+    </li>
+    <li>
+      <strong>Catch the enemies:</strong> Track enemies by supernatural Perks, sound, skill, and strategy. Every fight is earned.
+    </li>
+    <li>
+      <strong>Dynamic Objectives:</strong> Secure artifacts, rescue VIPs, defeat demonic bosses, clear anomalies, jump into the Arena, visit the Rift Royal, or go in for a Warmup — every match changes, and only what you extract survives.
+    </li>
+    <li>
+      <strong>Risk & Power Systems:</strong> Trade your soul at the Devil’s Chair, survive chaos unleashed by Rift Storms, and shape your fate.
+    </li>
+    <li>
+      <strong>Style Meets Grit:</strong> WWII-era weapons meet supernatural gear. Blood, tension, and tactical choices define every moment.
+    </li>
+   
+  </ul>
+  <p>Enter the Rift. Fight for your soul. Extract — or die trying</p>
+</div>
 
-          <p
-            data-aos="fade-up"
-            data-aos-delay="550"
-            className="text-lg md:text-xl leading-relaxed font-vintage text-[#d0c4b0]"
-          >
-            This is more than a game — it's a descent into an alternate 1908. Will you survive the Rift or be consumed by it?
-          </p>
 
+          
           {/* CTA Buttons */}
-          {/* <div className="flex gap-6 pt-3">
-            <button
-              data-aos="fade-up"
-              data-aos-delay="700"
-              className="primary-btn text-base md:text-lg"
-            >
-              Join the Fight
-            </button>
-            <button
-              data-aos="fade-up"
-              data-aos-delay="800"
-              onClick={togglePlay}
-              className="flex items-center gap-2 text-white text-base md:text-lg"
-            >
-              <BiPlayCircle className="text-3xl" />
-              Watch Trailer
-            </button>
-          </div> */}
+         
         </div>
 
         {/* Image Section */}
@@ -63,7 +62,7 @@ const Banner3 = ({ togglePlay }) => {
           <img
             src={BannerPng}
             alt="Revolver Rift Scene"
-            className="w-full max-w-[500px] object-contain rounded-lg shadow-xl"
+            className="w-full max-w-[1000px] object-contain rounded-lg shadow-xl"
           />
         </div>
       </div>

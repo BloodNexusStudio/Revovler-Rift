@@ -5,6 +5,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        
   vintage: ['Cinzel', 'serif'],
   custom: ['CustomGameFont', 'serif'], // 👈 This matches your JSX className
 },

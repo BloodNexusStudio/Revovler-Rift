@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Logo from "../../assets/IMG_0985.png";
 import BuyTheGameButton from "../../assets/under_maintaince.png";
 import home from "../../assets/HOME.png";
 import { HiMenuAlt1, HiMenuAlt3 } from "react-icons/hi";
@@ -24,18 +23,12 @@ const Navbar = () => {
 
   return (
     <header className="fixed top-0 left-0 w-full z-[9999] bg-black/50 backdrop-blur-lg border-b border-white/10 text-white shadow-md">
-      <div className="w-full px-0 py-1.5 flex justify-between items-center">
-        {/* 🔰 Logo aligned to far left */}
-        <div className="flex items-center gap-8 pl-8">
-          <img
-            src={Logo}
-            alt="Revolver Rift Logo"
-            className="max-h-20 sm:max-h-16 md:max-h-20 scale-100 object-contain drop-shadow-md transition-transform duration-300"
-          />
-        </div>
+      <div className="w-full py-4 flex justify-between items-center">
+        {/* 🔰 Empty placeholder for spacing (was Logo before) */}
+        <div className="w-[20%]"></div>
 
-        {/* 🖥 Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8 pr-4">
+        {/* 🖥 Desktop Navigation shifted 20% from right edge */}
+        <div className="hidden md:flex items-center gap-8" style={{ marginRight: '10%' }}>
           <ul className="flex items-center gap-6">
             {NavLinks.map(({ id, name, link }) => (
               <li key={id}>

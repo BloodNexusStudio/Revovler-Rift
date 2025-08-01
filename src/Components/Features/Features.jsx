@@ -1,104 +1,81 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaCameraRetro } from "react-icons/fa";
 import { GiNotebook } from "react-icons/gi";
 import { SlNote } from "react-icons/sl";
 import { FiShield, FiGlobe, FiZap } from "react-icons/fi";
 
-import img1 from "../../assets/img1.jpeg";
-import img2 from "../../assets/img2.jpeg";
-import img3 from "../../assets/img3.jpeg";
+import img1 from "../../assets/newassets/colt 19111.png";
+import img2 from "../../assets/newassets/trench gun 3.png";
+import img3 from "../../assets/newassets/p08 2.png";
 import img4 from "../../assets/img4.jpeg";
 
 const NewsData = [
   {
-    title: "Welcome to the Rift",
+    title: "The Art of Building Immersion",
     icon: <FaCameraRetro className="text-4xl text-accent duration-300" />,
     image: img1,
-    description: `The year is 1908, but the world is not as the history books tell it. Towering gothic castles loom through smog. Knights wield revolvers as ancient blood feuds turn to gunfire.`,
+    description: "Creating a truly immersive experience isn’t just about visuals — it’s about the small details that pull players into another world.",
+    fullDescription: "Creating a truly immersive experience isn’t just about visuals — it’s about the small details that pull players into another world. From ambient sounds to the way light filters through a room, these subtle touches invite players to feel like they’re not just playing a game, but living in it. We focus on atmosphere over perfection, knowing that mood and engagement are what matter most. Every corner tells a story, and even the smallest detail can change how players experience the world we create.",
     link: "#",
     delay: "300",
   },
   {
-    title: "The Celestial Tear",
+    title: "The Power of Uncertainty: Creating Suspense",
     icon: <GiNotebook className="text-4xl text-accent duration-300" />,
     image: img2,
-    description: `A strange event—the Rift—has torn through reality, imbuing bloodlines with uncanny powers. The streets of steel and soot are no longer ruled by men alone.`,
+    description: "Suspense is the art of leaving players uncertain about what comes next. It’s not just the big moments that make players tense — it’s the quiet ones too.",
+    fullDescription: "Suspense is the art of leaving players uncertain about what comes next. It’s not just the big moments that make players tense — it’s the quiet ones too. The moments of silence, slow pacing, and what players don’t see, often have the greatest impact. Creating suspense means building tension without giving too much away, keeping players on edge and making every twist feel unexpected. It’s about playing with their minds as much as the gameplay itself.",
     link: "#",
     delay: "400",
   },
   {
-    title: "Rise of the Iron Factions",
+    title: " The Invisible Work: Making the Game Feel Real",
     icon: <SlNote className="text-4xl text-accent duration-300" />,
     image: img3,
-    description: `Warriors, nobles, and cursed machines now vie for dominance. Alliances are fragile, and power comes at a bloody cost. Control the Rift, control the future.`,
+    description: "Some of the most important work in game design is invisible. It’s the subtle things.",
+    fullDescription: "Some of the most important work in game design is invisible. It’s the subtle animations, ambient sounds, and interaction feedback that make the world feel real. Whether it’s a hand movement or the soft rustle of leaves, these small details are what create a living, breathing world. The goal is to make every interaction feel natural, and that’s the invisible work that truly brings the game to life.",
     link: "#",
     delay: "500",
-  },
-  {
-    title: "Wanderer’s Chronicle",
-    icon: <FiShield className="text-4xl text-accent duration-300" />,
-    image: img4,
-    description: `You are a duelist, a survivor caught in the crossfire. Will you seize the Rift’s gifts or fall to its horrors? The age of myth and muzzle has begun.`,
-    link: "#",
-    delay: "600",
-  },
-  {
-    title: "Whispers from the Smog",
-    icon: <FiGlobe className="text-4xl text-accent duration-300" />,
-    image: img1,
-    description: `From cathedrals to sewer dens, secrets stir. Alchemists whisper of keys, priests beg the sun for light. The Rift listens… and hungers.`,
-    link: "#",
-    delay: "700",
-  },
-  {
-    title: "Guns, Steel & Bloodlines",
-    icon: <FiZap className="text-4xl text-accent duration-300" />,
-    image: img2,
-    description: `The new age is here. Swords and spells clash with rifles and relics. Every duel could alter fate. Every shot echoes through history.`,
-    link: "#",
-    delay: "800",
   },
 ];
 
 const NewsCardGrid = () => {
+  const [selectedCard, setSelectedCard] = useState(null);
+
+  const handleCardClick = (card) => {
+    setSelectedCard(card);
+  };
+
+  const closeModal = () => {
+    setSelectedCard(null);
+  };
+
+  const handleBackgroundClick = (e) => {
+    if (e.target.classList.contains("modal-background")) {
+      closeModal();
+    }
+  };
+
   return (
     <div className="w-full bg-black text-[#d1c7b7] py-16">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-
         {/* Heading + Button */}
-        <div className="flex justify-between items-center mb-12">
-          <h1
-            className="text-4xl font-bold"
-            style={{ fontFamily: "'Cinzel', serif" }}
-          >
-            News Blogs
-          </h1>
-          {/* <a
-            href="#"
-            className="bg-[#9B1C1C] hover:bg-[#7A1616] text-white font-semibold py-2 px-6 rounded-lg shadow-md transition duration-300"
-          >
-            Blogs
-          </a> */}
-        </div>
+       <div className="flex justify-center items-center mb-12">
+  <h1 className="text-4xl font-bold text-[#b89a6f]" style={{ fontFamily: "'Cinzel', serif" }}>
+    Developer Blogs
+  </h1>
+</div>
+
 
         {/* News Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-14">
           {NewsData.map((news, index) => (
             <div
               key={index}
               data-aos="fade-up"
               data-aos-delay={news.delay}
-              className="
-                group 
-                backdrop-blur-md 
-                bg-[rgba(40,30,30,0.4)] 
-                border border-[#5a3e3e40] 
-                transition-all 
-                rounded-xl 
-                overflow-hidden 
-                p-8 sm:py-12
-                duration-300
-              "
+              className="group backdrop-blur-md bg-[rgba(40,30,30,0.4)] border border-[#5a3e3e40] transition-all rounded-xl overflow-hidden p-8 sm:py-12 duration-300 cursor-pointer"
+              onClick={() => handleCardClick(news)}
             >
               <img
                 src={news.image}
@@ -106,30 +83,52 @@ const NewsCardGrid = () => {
                 className="w-full h-44 object-cover rounded-md mb-5 hover:scale-105 transition-transform duration-300 shadow-md"
               />
               <div className="flex justify-center mb-3">{news.icon}</div>
-              <h2
-                className="text-2xl font-bold mb-3"
-                style={{ fontFamily: "'Cinzel', serif" }}
-              >
+              <h2 className="text-2xl font-bold mb-3" style={{ fontFamily: "'Cinzel', serif", color: "#b89a6f" }}>
                 {news.title}
               </h2>
-              <p
-                className="text-base leading-relaxed font-light"
-                style={{ fontFamily: "'EB Garamond', serif" }}
-              >
+              <p className="text-base leading-relaxed font-light" style={{ fontFamily: "'EB Garamond', serif", color: "#e0c4a2" }}>
                 {news.description}
               </p>
-              <a
-                href={news.link}
-                className="inline-block mt-6 text-accent text-lg font-semibold duration-300"
-              >
-                Learn More →
-              </a>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Modal for selected card */}
+      {selectedCard && (
+        <div
+          className="fixed inset-0 bg-black/80 flex justify-center items-center z-50 modal-background"
+          onClick={handleBackgroundClick}
+        >
+          <div className="bg-gradient-to-b from-black/70 to-black/50 text-white p-6 w-[90%] sm:w-[60%] rounded-lg shadow-xl relative mt-16">
+            {/* Close Modal Button */}
+            <button
+              onClick={closeModal}
+              className="absolute top-2 right-2 text-white text-xl font-bold"
+            >
+              X
+            </button>
+
+            {/* Back Button */}
+            <button
+              onClick={closeModal}
+              className="absolute top-2 left-2 text-white text-xl font-bold"
+            >
+              ← Back
+            </button>
+
+            <img
+              src={selectedCard.image}
+              alt={selectedCard.title}
+              className="w-full h-60 object-cover rounded-md mb-5"
+            />
+            <h2 className="text-4xl font-bold mb-4 text-[#f4e1c1]">{selectedCard.title}</h2>
+            <p className="text-lg leading-relaxed mb-4 text-[#e0c4a2]">{selectedCard.fullDescription}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
-export default NewsCardGrid;
+export default NewsCardGrid;

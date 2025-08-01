@@ -89,9 +89,19 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* 4 Logos Section Above Copyright */}
+        <div className="flex justify-center gap-12 mt-8 mb-4">
+          {/* <img src="../src/assets/newassets/KAHR_NewLogo_V02.png" alt="Logo 1" className="w-16 h-16" /> */}
+          <img src="../src/assets/newassets/BNLOGO.png" alt="Logo 2" className="w-16 h-16" />
+          <img src="../src/assets/newassets/STEAMLOGO.png" alt="Logo 3" className="w-16 h-16" />
+          <img src="../src/assets/newassets/UNREALLOGO.png" alt="Logo 4" className="w-16 h-16" />
+        </div>
+
         {/* Copyright */}
         <div className="w-full text-center mt-6 text-xs text-[#725640] tracking-widest">
-          &copy; KAHRWORKS GMBH – All rights reserved.
+          <a href="https://www.revolver-rift.com/" target="_blank" rel="noopener noreferrer">
+            &copy; KAHRWORKS GMBH – All rights reserved.
+          </a>
         </div>
       </footer>
     </>

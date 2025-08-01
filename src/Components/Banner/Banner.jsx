@@ -1,5 +1,5 @@
 import React from "react";
-import BannerPng from "../../assets/shot2.png";
+import BannerPng from "../../assets/newassets/SHOT_1.0000.png";
 import { BiPlayCircle } from "react-icons/bi";
 
 const Banner = ({ togglePlay }) => {
@@ -13,7 +13,7 @@ const Banner = ({ togglePlay }) => {
             <img
               src={BannerPng}
               alt="Brown Street"
-              className="w-full max-w-[550px] rounded-lg shadow-xl"
+              className="w-full max-w-[900px] rounded-lg shadow-xl"
             />
           </div>
 
@@ -32,15 +32,11 @@ const Banner = ({ togglePlay }) => {
   data-aos-delay="500"
   className="text-lg leading-relaxed font-vintage text-[#d0c4b0]"
 >
-  Europe, 1948. The war never ended, it just changed form. <br />
-  Hellgates tore open the soil. Something old crawled out. <br />
-  You’re not here to cleanse. You’re here to extract. <br />
-  Every run is high risk: 16 compounds, dozens of threats, one shot at survival. <br />
-  Demons aren’t the only monsters out here. <br />
-  Load your revolver. Burn a perk card. Pray it’s enough. <br />
-  The Devil’s Chair waits, trade your soul for power mid-match. <br />
-  You won’t win by force. You win by escape. <br />
-  Enter the Rift. Make it out …or don’t.
+  <h2><b>A Hardcore PvPvE Extraction Shooter with Tactical Depth and Hellish Stakes,</b></h2><br/>
+In Revolver Rift, every match is a deadly sandbox of decisions. Drop into war torn 1944 as part of a cursed or blessed faction. Loot powerful artifacts, battle AI-controlled demons, undead, and rival players and fight your way to one of the last extraction points before the Rift collapses.<br/><br/>
+Use period-based weapons, unique perks, and deadly gadgets. Build your loadout. Track targets. Ambush enemies. But remember: only what you extract survives.<br/><br/>
+<b>High risk. High reward. No second chances.</b>
+
 </p>
               {/* <p
                 data-aos="fade-up"

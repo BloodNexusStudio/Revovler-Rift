@@ -10,10 +10,12 @@ import Features from "./Components/Features/Features";
 import AppStore from "./Components/AppStore/AppStore";
 import Footer from "./Components/Footer/Footer";
 import PopupPlayer from "./Components/PopupPlayer/PopupPlayer";
-
+import Testimonials from "./Components/Testimonials/Testimonials";
+import Banner5 from "./Components/Banner/Banner5";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
+import Banner6 from "./Components/Banner/Banner6";
+import Banner7 from "./Components/Banner/Banner7";
 const App = () => {
   const [isPlay, setIsPlay] = useState(false);
 
@@ -34,19 +36,24 @@ const App = () => {
   return (
     <main className="overflow-x-hidden bg-white dark:bg-black text-black dark:text-white duration-300">
       <Navbar />
-      {/* <Hero togglePlay={togglePlay} />  */}
-      <Hero2 togglePlay={togglePlay} /> 
-      {/* <Quotes />  */}
-      {/* <Banner togglePlay={togglePlay} /> */}
-      {/* <Banner3 togglePlay={togglePlay} /> */}
-      {/* <Banner2 togglePlay={togglePlay} /> */}
-  
-      {/* <Features /> */}
+      <Hero togglePlay={togglePlay} /> 
+      {/* <Hero2 togglePlay={togglePlay} /> */}
+      <Quotes /> 
+      <Banner togglePlay={togglePlay} />
+      <Banner3 togglePlay={togglePlay} />
+      <Banner2 togglePlay={togglePlay} />
+      <Banner5 togglePlay={togglePlay}/>
+      <Banner6 togglePlay={togglePlay}/>
+      <div className="bg-black min-h-screen">
+      <Testimonials/>
+    </div>
+      <Features />
       {/* <AppStore />  */}
+      <Banner7 togglePlay={togglePlay}/>
       <Footer />
 
       {/* Video Player */}
-      {/* <PopupPlayer isPlay={isPlay} togglePlay={togglePlay} /> */}
+      <PopupPlayer isPlay={isPlay} togglePlay={togglePlay} />
     </main>
   );
 };

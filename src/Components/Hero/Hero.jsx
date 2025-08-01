@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import bgVideo from '../../assets/shot1.mp4';
+import bgVideo from '../../assets/newassets/1.mp4';
 import crackedBox from '../../assets/image.png';
 import revolverTitle from '../../assets/IMG.png';
 
 const HeroCountdown = () => {
   const calculateTimeLeft = () => {
-    const targetDate = new Date('2025-12-31T00:00:00');
+    // Target date set to 29 August 2025 at midnight CET (in UTC)
+    const targetDate = new Date('2025-08-29T00:00:00+02:00');
     const difference = targetDate - new Date();
     let timeLeft = {};
 
@@ -14,7 +15,6 @@ const HeroCountdown = () => {
         days: Math.floor(difference / (1000 * 60 * 60 * 24)),
         hours: String(Math.floor((difference / (1000 * 60 * 60)) % 24)).padStart(2, '0'),
         minutes: String(Math.floor((difference / 1000 / 60) % 60)).padStart(2, '0'),
-        seconds: String(Math.floor((difference / 1000) % 60)).padStart(2, '0'),
       };
     }
     return timeLeft;
@@ -23,7 +23,7 @@ const HeroCountdown = () => {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
   useEffect(() => {
-    const timer = setInterval(() => setTimeLeft(calculateTimeLeft()), 1000);
+    const timer = setInterval(() => setTimeLeft(calculateTimeLeft()), 60000); // Update every minute
     return () => clearInterval(timer);
   }, []);
 
@@ -52,29 +52,6 @@ const HeroCountdown = () => {
           background: 'radial-gradient(ellipse at center, rgba(0,0,0,0) 40%, rgba(0,0,0,0.75) 100%)',
         }}
       />
-
-      {/* 🔄 Bounce Animation */}
-      <style>{`
-        @keyframes bounceDrop {
-          0% {
-            transform: translateY(-200px) scale(1.2) rotateX(30deg);
-            opacity: 0;
-          }
-          50% {
-            transform: translateY(10px) scale(0.98);
-            opacity: 1;
-          }
-          70% {
-            transform: translateY(-6px) scale(1.03);
-          }
-          85% {
-            transform: translateY(4px) scale(0.99);
-          }
-          100% {
-            transform: translateY(0px) scale(1);
-          }
-        }
-      `}</style>
 
       {/* 📜 Content */}
       <div className="relative z-20 flex flex-col h-full px-[5vw] text-center justify-start">
