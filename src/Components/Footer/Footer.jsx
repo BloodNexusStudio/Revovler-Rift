@@ -89,14 +89,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* 4 Logos Section Above Copyright */}
-        <div className="flex justify-center gap-12 mt-8 mb-4">
-          {/* <img src="../src/assets/newassets/KAHR_NewLogo_V02.png" alt="Logo 1" className="w-16 h-16" /> */}
-          {/* <img src="../src/assets/logo/Logo2.png" alt="Logo 2" className="w-16 h-16" />
-          <img src="../src/assets/logo/Logo3.png" alt="Logo 3" className="w-16 h-16" />
-          <img src="../src/assets/logo/Logo4.png" alt="Logo 4" className="w-16 h-16" /> */}
-        </div>
-
         {/* Copyright */}
         <div className="w-full text-center mt-6 text-xs text-[#725640] tracking-widest">
           <a href="https://www.revolver-rift.com/" target="_blank" rel="noopener noreferrer">
