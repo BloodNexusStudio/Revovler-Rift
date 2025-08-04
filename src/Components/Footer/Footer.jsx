@@ -152,7 +152,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="w-full text-center mt-6 text-xs text-[#725640] tracking-widest">
-          <a href="https://www.revolver-rift.com/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.kahrworks.at" target="_blank" rel="noopener noreferrer">
             &copy; KAHRWORKS GMBH – All rights reserved.
           </a>
         </div>
