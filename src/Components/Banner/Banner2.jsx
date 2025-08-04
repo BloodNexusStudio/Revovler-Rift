@@ -8,13 +8,13 @@ import Banner5 from "../../assets/newassets/2.mp4";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-// ⬇️ Add a type key for conditional rendering
+// Banner data with type key for video/image
 const banners = [
   { type: "video", src: Banner1 },
   { type: "image", src: Banner2Img },
   { type: "image", src: Banner3 },
   { type: "image", src: Banner4 },
-{ type: "video", src: Banner5 }
+  { type: "video", src: Banner5 }
 ];
 
 const Banner2 = () => {
@@ -33,11 +33,11 @@ const Banner2 = () => {
 
   return (
     <div className="w-full bg-black py-10">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4">
         <Slider {...settings}>
           {banners.map((item, i) => (
-            <div key={i} className="px-2">
-              <div className="overflow-hidden rounded-2xl shadow-2xl relative group">
+            <div key={i} className="px-1 sm:px-2">
+              <div className="overflow-hidden rounded-2xl shadow-2xl relative group max-h-screen">
                 {item.type === "video" ? (
                   <video
                     src={item.src}
@@ -45,13 +45,13 @@ const Banner2 = () => {
                     muted
                     loop
                     playsInline
-                    className="w-full h-[600px] object-cover"
+                    className="w-full h-[300px] sm:h-[400px] md:h-[600px] object-cover"
                   />
                 ) : (
                   <img
                     src={item.src}
                     alt={`Slide ${i + 1}`}
-                    className="w-full h-[600px] object-cover transform scale-110 group-hover:scale-105 transition-transform duration-[5000ms] ease-in-out"
+                    className="w-full h-[300px] sm:h-[400px] md:h-[600px] object-cover transform scale-110 group-hover:scale-105 transition-transform duration-[5000ms] ease-in-out"
                   />
                 )}
 

@@ -35,7 +35,7 @@ const App = () => {
 
   return (
     <main className="overflow-x-hidden bg-white dark:bg-black text-black dark:text-white duration-300">
-      <Navbar />
+      {/* <Navbar /> */}
       <Hero togglePlay={togglePlay} /> 
       {/* <Hero2 togglePlay={togglePlay} /> */}
       <Quotes /> 

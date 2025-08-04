@@ -58,14 +58,14 @@ const HeroCountdown = () => {
         <div className="flex flex-col items-center w-full mt-[10vh]">
           {/* 🖼️ Logo */}
           <img
-            src={revolverTitle}
-            alt="Revolver Rift Title"
-            className="w-[45vw] max-w-[500px] min-w-[250px] mb-10"
-            style={{ animation: 'bounceDrop 1.2s ease-out forwards' }}
-          />
+  src={revolverTitle}
+  alt="Revolver Rift Title"
+  className="w-[45vw] max-w-[500px] min-w-[250px] mb-[0vh]"
+  style={{ animation: 'bounceDrop 1.2s ease-out forwards' }}
+/>
 
           {/* ⏳ Countdown */}
-          <div className="flex flex-wrap justify-center gap-6 -mt-[12vh]">
+          <div className="flex flex-wrap justify-center gap-6 ">
             {Object.entries(timeLeft).map(([unit, value], index) => (
               <div
                 key={unit}

@@ -109,14 +109,7 @@ const NewsCardGrid = () => {
               X
             </button>
 
-            {/* Back Button */}
-            <button
-              onClick={closeModal}
-              className="absolute top-2 left-2 text-white text-xl font-bold"
-            >
-              ← Back
-            </button>
-
+            
             <img
               src={selectedCard.image}
               alt={selectedCard.title}
