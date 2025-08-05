@@ -1,6 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
-import Banner1 from "../../assets/SHot2.mp4"; // MP4
+import Banner1 from "../../assets/SHot2.mp4";
 import Banner2Img from "../../assets/newassets/WINCHESTER1.png";
 import Banner3 from "../../assets/newassets/STG44LOGO.png";
 import Banner4 from "../../assets/newassets/7.png";
@@ -8,7 +8,6 @@ import Banner5 from "../../assets/newassets/2.mp4";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-// Banner data with type key for video/image
 const banners = [
   { type: "video", src: Banner1 },
   { type: "image", src: Banner2Img },
@@ -33,11 +32,11 @@ const Banner2 = () => {
 
   return (
     <div className="w-full bg-black py-10">
-      <div className="max-w-7xl mx-auto px-2 sm:px-4">
+      <div className="max-w-screen-xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
         <Slider {...settings}>
           {banners.map((item, i) => (
             <div key={i} className="px-1 sm:px-2">
-              <div className="overflow-hidden rounded-2xl shadow-2xl relative group max-h-screen">
+              <div className="overflow-hidden rounded-2xl shadow-2xl relative group">
                 {item.type === "video" ? (
                   <video
                     src={item.src}
@@ -45,18 +44,23 @@ const Banner2 = () => {
                     muted
                     loop
                     playsInline
-                    className="w-full h-[300px] sm:h-[400px] md:h-[600px] object-cover"
+                    className="w-full object-cover 
+                      h-[200px] sm:h-[300px] md:h-[450px] lg:h-[600px] 
+                      transition-all duration-1000 ease-in-out"
                   />
                 ) : (
                   <img
                     src={item.src}
                     alt={`Slide ${i + 1}`}
-                    className="w-full h-[300px] sm:h-[400px] md:h-[600px] object-cover transform scale-110 group-hover:scale-105 transition-transform duration-[5000ms] ease-in-out"
+                    className="w-full object-cover 
+                      h-[200px] sm:h-[300px] md:h-[450px] lg:h-[600px] 
+                      transform scale-110 group-hover:scale-105 
+                      transition-transform duration-[5000ms] ease-in-out"
                   />
                 )}
 
-                {/* Optional gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent z-10 pointer-events-none"></div>
+                {/* Optional overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent z-10 pointer-events-none"></div>
               </div>
             </div>
           ))}

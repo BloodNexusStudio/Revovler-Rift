@@ -52,16 +52,21 @@ const TestimonialSlider = () => {
   return (
     <div className="w-full min-h-screen flex flex-col justify-center items-center bg-black text-white font-sans px-4 py-20">
       {/* Header */}
-      <div className="w-full max-w-4xl text-center mb-28">
-        <h1 className="text-4xl font-bold text-[#b89a6f]" style={{ fontFamily: "'Cinzel', serif" }}>
+      <div className="w-full max-w-5xl text-center mb-20 px-4">
+        <h1
+          className="text-[clamp(1.75rem,3vw,2.5rem)] font-bold text-[#b89a6f]"
+          style={{ fontFamily: "'Cinzel', serif" }}
+        >
           Developer's Insights
         </h1>
-        <p className="text-lg text-gray-400 mt-2">Whispers from those who've walked the edge.</p>
+        <p className="text-base md:text-lg text-gray-400 mt-2">
+          Whispers from those who've walked the edge.
+        </p>
       </div>
 
       {/* Carousel */}
       <div
-        className="w-[90%] inline-flex flex-nowrap overflow-hidden
+        className="w-full max-w-[1920px] inline-flex flex-nowrap overflow-hidden
         [mask-image:_linear-gradient(to_right,transparent_0,_black_96px,_black_calc(100%-96px),transparent_100%)]"
       >
         <ul
@@ -69,18 +74,18 @@ const TestimonialSlider = () => {
           onMouseDown={handlePause}
           onMouseUp={handleResume}
           onMouseLeave={handleResume}
-          className="flex items-center justify-center md:justify-start [&_li]:mx-5 animate-infinite-scroll"
+          className="flex items-center justify-center md:justify-start [&_li]:mx-6 animate-infinite-scroll"
         >
           {duplicatedTestimonials.map((item, index) => (
             <li
               key={index}
-              className="bg-[#0a0a0a] text-gray-200 p-8 rounded-xl w-[320px] h-[350px] flex flex-col items-center text-center flex-shrink-0 border border-[#5c1e1e]"
+              className="bg-[#0a0a0a] text-gray-200 p-6 sm:p-8 rounded-xl w-[clamp(260px,30vw,320px)] h-[clamp(300px,40vh,350px)] flex flex-col items-center text-center flex-shrink-0 border border-[#5c1e1e]"
             >
-              <div className="text-6xl text-red-600 mb-4 leading-none">“</div>
-              <p className="text-lg font-light italic text-gray-300 leading-relaxed mb-4">
+              <div className="text-6xl sm:text-7xl lg:text-8xl text-red-600 mb-4 leading-none">“</div>
+              <p className="text-sm sm:text-base font-light italic text-gray-300 leading-relaxed mb-4">
                 {item.quote}
               </p>
-              <h3 className="text-xl font-semibold tracking-wide text-red-100 mt-auto">
+              <h3 className="text-base sm:text-lg font-semibold tracking-wide text-red-100 mt-auto">
                 - {item.name}
               </h3>
             </li>

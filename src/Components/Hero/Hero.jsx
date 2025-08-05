@@ -5,7 +5,6 @@ import revolverTitle from '../../assets/IMG.png';
 
 const HeroCountdown = () => {
   const calculateTimeLeft = () => {
-    // Target date set to 29 August 2025 at midnight CET (in UTC)
     const targetDate = new Date('2025-08-29T00:00:00+02:00');
     const difference = targetDate - new Date();
     let timeLeft = {};
@@ -23,7 +22,7 @@ const HeroCountdown = () => {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
   useEffect(() => {
-    const timer = setInterval(() => setTimeLeft(calculateTimeLeft()), 60000); // Update every minute
+    const timer = setInterval(() => setTimeLeft(calculateTimeLeft()), 60000);
     return () => clearInterval(timer);
   }, []);
 
@@ -54,25 +53,25 @@ const HeroCountdown = () => {
       />
 
       {/* 📜 Content */}
-      <div className="relative z-20 flex flex-col h-full px-[5vw] text-center justify-start">
+      <div className="relative z-20 flex flex-col h-full px-4 sm:px-6 lg:px-[5vw] text-center justify-start">
         <div className="flex flex-col items-center w-full mt-[10vh]">
           {/* 🖼️ Logo */}
           <img
-  src={revolverTitle}
-  alt="Revolver Rift Title"
-  className="w-[45vw] max-w-[500px] min-w-[250px] mb-[0vh]"
-  style={{ animation: 'bounceDrop 1.2s ease-out forwards' }}
-/>
+            src={revolverTitle}
+            alt="Revolver Rift Title"
+            className="w-[clamp(250px,45vw,500px)] mb-4"
+            style={{ animation: 'bounceDrop 1.2s ease-out forwards' }}
+          />
 
           {/* ⏳ Countdown */}
-          <div className="flex flex-wrap justify-center gap-6 ">
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-8">
             {Object.entries(timeLeft).map(([unit, value], index) => (
               <div
                 key={unit}
                 className="flex flex-col items-center justify-center rounded-xl"
                 style={{
-                  width: '9.5rem',
-                  minHeight: '9.5rem',
+                  width: 'clamp(7.5rem, 22vw, 9.5rem)',
+                  minHeight: 'clamp(7.5rem, 22vw, 9.5rem)',
                   padding: '2rem 1rem',
                   backgroundImage: `url(${crackedBox})`,
                   backgroundSize: 'cover',
@@ -84,8 +83,12 @@ const HeroCountdown = () => {
                   animationDelay: `${index * 0.25}s`,
                 }}
               >
-                <span className="text-[2rem] sm:text-[2.5rem] text-[#f5ebd9] font-mono tracking-widest">{value}</span>
-                <span className="text-sm uppercase text-[#e0d2bd] mt-2 tracking-wider">{unit}</span>
+                <span className="text-[1.8rem] sm:text-[2rem] md:text-[2.5rem] text-[#f5ebd9] font-mono tracking-widest">
+                  {value}
+                </span>
+                <span className="text-sm uppercase text-[#e0d2bd] mt-2 tracking-wider">
+                  {unit}
+                </span>
               </div>
             ))}
           </div>
