@@ -4,7 +4,8 @@ const Banner7 = () => {
   return (
     <div className="relative bg-black flex items-center justify-center min-h-screen pt-20 pb-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto w-full">
-        <div className="space-y-10 text-center lg:text-left text-[#e4d6c3]">
+        {/* ✅ Removed lg:text-left so it stays centered */}
+        <div className="space-y-10 text-center text-[#e4d6c3]">
           {/* Main Headline */}
           <h1
             data-aos="fade-up"

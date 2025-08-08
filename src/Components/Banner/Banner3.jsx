@@ -6,13 +6,13 @@ const Banner3 = ({ togglePlay }) => {
   return (
     <div className="py-24 bg-black">
       <div className="container mx-auto flex flex-col-reverse sm:flex-row items-center justify-between gap-16 sm:gap-24">
-
+        
         {/* Text Section */}
-        <div className="w-full sm:w-1/2 space-y-6 text-left px-4 sm:px-0">
+        <div className="w-full sm:w-1/2 space-y-6 px-4 sm:px-0">
           <h1
             data-aos="fade-up"
             data-aos-delay="300"
-            className="text-4xl md:text-5xl font-vintage tracking-wide text-[#e4d6c3]"
+            className="text-center text-4xl md:text-5xl font-vintage tracking-wide text-[#e4d6c3]"
           >
             What Makes Revolver Rift Unique
           </h1>
@@ -20,7 +20,7 @@ const Banner3 = ({ togglePlay }) => {
           <div
             data-aos="fade-up"
             data-aos-delay="500"
-            className="text-lg md:text-xl leading-relaxed font-vintage text-[#d0c4b0]"
+            className="text-lg md:text-xl leading-relaxed font-vintage text-[#d0c4b0] text-left"
           >
             <p>This is not your typical shooter:</p>
             <ul className="list-disc list-inside mt-4 space-y-2">
@@ -56,7 +56,7 @@ const Banner3 = ({ togglePlay }) => {
           <img
             src={BannerPng}
             alt="Revolver Rift Scene"
-            className="w-full max-w-[1200px] object-contain rounded-lg shadow-xl"
+            className="w-full max-w-[1200px] object-contain rounded-lg shadow-xl border-0"
           />
         </div>
       </div>

@@ -12,13 +12,13 @@ const Banner = ({ togglePlay }) => {
             <img
               src={BannerPng}
               alt="Brown Street"
-              className="w-full max-w-[720px] mx-auto rounded-lg shadow-xl"
+              className="w-full max-w-[720px] mx-auto rounded-lg shadow-xl border-0"
             />
           </div>
 
           {/* text content section */}
           <div className="lg:pr-10 px-2">
-            <div className="space-y-6 text-center lg:text-left">
+            <div className="space-y-6 text-center">
               <h1
                 data-aos="fade-up"
                 data-aos-delay="300"
@@ -30,7 +30,7 @@ const Banner = ({ togglePlay }) => {
               <div
                 data-aos="fade-up"
                 data-aos-delay="500"
-                className="text-base md:text-lg leading-relaxed font-vintage text-[#d0c4b0] space-y-4"
+                className="text-base md:text-lg leading-relaxed font-vintage text-[#d0c4b0] space-y-4 text-center"
               >
                 <p className="font-semibold text-[#e4d6c3] text-lg">
                   A Hardcore PvPvE Extraction Shooter with Tactical Depth and Hellish Stakes
