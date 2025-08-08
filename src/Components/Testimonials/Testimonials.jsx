@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 
 const testimonials = [
   {
@@ -34,76 +34,100 @@ const testimonials = [
 ];
 
 const TestimonialSlider = () => {
-  const duplicatedTestimonials = [...testimonials, ...testimonials];
   const sliderRef = useRef(null);
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
 
-  const handlePause = () => {
-    if (sliderRef.current) {
-      sliderRef.current.style.animationPlayState = 'paused';
-    }
-  };
+  useEffect(() => {
+    const slider = sliderRef.current;
+    if (!slider) return;
 
-  const handleResume = () => {
-    if (sliderRef.current) {
-      sliderRef.current.style.animationPlayState = 'running';
-    }
-  };
+    const handleMouseDown = (e) => {
+      isDragging.current = true;
+      startX.current = e.pageX - slider.offsetLeft;
+      scrollLeft.current = slider.scrollLeft;
+      slider.style.cursor = 'grabbing';
+      slider.style.animationPlayState = 'paused';
+    };
+
+    const handleMouseMove = (e) => {
+      if (!isDragging.current) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX.current) * 1.5;
+      slider.scrollLeft = scrollLeft.current - walk;
+    };
+
+    const handleMouseUp = () => {
+      isDragging.current = false;
+      slider.style.cursor = 'grab';
+      slider.style.animationPlayState = 'running';
+    };
+
+    const handleMouseLeave = () => {
+      if (isDragging.current) handleMouseUp();
+    };
+
+    slider.addEventListener('mousedown', handleMouseDown);
+    slider.addEventListener('mousemove', handleMouseMove);
+    slider.addEventListener('mouseup', handleMouseUp);
+    slider.addEventListener('mouseleave', handleMouseLeave);
+
+    return () => {
+      slider.removeEventListener('mousedown', handleMouseDown);
+      slider.removeEventListener('mousemove', handleMouseMove);
+      slider.removeEventListener('mouseup', handleMouseUp);
+      slider.removeEventListener('mouseleave', handleMouseLeave);
+    };
+  }, []);
+
+  const duplicatedTestimonials = [...testimonials, ...testimonials];
 
   return (
-    <div className="w-full min-h-screen flex flex-col justify-center items-center bg-black text-white font-sans px-4 py-20">
-      {/* Header */}
-      <div className="w-full max-w-5xl text-center mb-20 px-4">
-        <h1
-          className="text-[clamp(1.75rem,3vw,2.5rem)] font-bold text-[#b89a6f]"
-          style={{ fontFamily: "'Cinzel', serif" }}
-        >
+    <div className="w-full bg-black text-white font-serif pt-20 pb-0 px-4 overflow-hidden">
+      {/* Heading */}
+      <div className="max-w-5xl mx-auto text-center mb-36">
+        <h2 className="text-[clamp(1.75rem,3vw,2.5rem)] font-bold text-[#b89a6f] font-cinzel">
           Developer's Insights
-        </h1>
+        </h2>
         <p className="text-base md:text-lg text-gray-400 mt-2">
           Whispers from those who've walked the edge.
         </p>
       </div>
 
-      {/* Carousel */}
-      <div
-        className="w-full max-w-[1920px] inline-flex flex-nowrap overflow-hidden
-        [mask-image:_linear-gradient(to_right,transparent_0,_black_96px,_black_calc(100%-96px),transparent_100%)]"
-      >
+      {/* Scrolling Container */}
+      <div className="relative w-full overflow-hidden">
         <ul
           ref={sliderRef}
-          onMouseDown={handlePause}
-          onMouseUp={handleResume}
-          onMouseLeave={handleResume}
-          className="flex items-center justify-center md:justify-start [&_li]:mx-6 animate-infinite-scroll"
+          className="flex animate-infinite-scroll gap-6 cursor-grab select-none"
         >
           {duplicatedTestimonials.map((item, index) => (
             <li
               key={index}
-              className="bg-[#0a0a0a] text-gray-200 p-6 sm:p-8 rounded-xl w-[clamp(260px,30vw,320px)] h-[clamp(300px,40vh,350px)] flex flex-col items-center text-center flex-shrink-0 border border-[#5c1e1e]"
+              className="flex-shrink-0 w-[calc(100%/1)] sm:w-[calc(100%/2)] md:w-[calc(100%/3)] lg:w-[calc(100%/4)] xl:w-[calc(100%/5)] px-2"
             >
-              <div className="text-6xl sm:text-7xl lg:text-8xl text-red-600 mb-4 leading-none">“</div>
-              <p className="text-sm sm:text-base font-light italic text-gray-300 leading-relaxed mb-4">
-                {item.quote}
-              </p>
-              <h3 className="text-base sm:text-lg font-semibold tracking-wide text-red-100 mt-auto">
-                - {item.name}
-              </h3>
+              <div className="bg-[#0a0a0a] border border-[#5c1e1e] rounded-xl p-6 h-full flex flex-col items-center text-center shadow-lg">
+                <div className="text-6xl sm:text-7xl text-red-600 mb-4 leading-none">“</div>
+                <p className="text-sm sm:text-base font-light italic text-gray-300 leading-relaxed mb-4">
+                  {item.quote}
+                </p>
+                <h3 className="text-sm sm:text-base font-semibold tracking-wide text-red-100 mt-auto">
+                  - {item.name}
+                </h3>
+              </div>
             </li>
           ))}
         </ul>
       </div>
 
-      {/* Global animation style */}
-      <style jsx global>{`
-        @tailwind base;
-        @tailwind components;
-        @tailwind utilities;
-
+      {/* Styles */}
+      <style jsx="true">{`
         @keyframes infinite-scroll {
-          from {
-            transform: translateX(0);
+          0% {
+            transform: translateX(0%);
           }
-          to {
+          100% {
             transform: translateX(-50%);
           }
         }
@@ -111,6 +135,10 @@ const TestimonialSlider = () => {
         .animate-infinite-scroll {
           animation: infinite-scroll 60s linear infinite;
           animation-play-state: running;
+        }
+
+        .font-cinzel {
+          font-family: 'Cinzel', serif;
         }
       `}</style>
     </div>
