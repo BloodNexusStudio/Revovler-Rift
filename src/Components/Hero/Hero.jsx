@@ -27,7 +27,7 @@ const HeroCountdown = () => {
   }, []);
 
   return (
-    <section className="relative w-full h-screen text-white font-serif overflow-hidden">
+    <section className="relative w-full min-h-screen text-white font-serif overflow-hidden">
       {/* 🎥 Background Video */}
       <video
         className="absolute top-0 left-0 w-full h-full object-cover z-0"
@@ -53,7 +53,7 @@ const HeroCountdown = () => {
       />
 
       {/* 📜 Content */}
-      <div className="relative z-20 flex flex-col h-full px-4 sm:px-6 lg:px-[5vw] text-center justify-start">
+      <div className="relative z-20 flex flex-col h-full px-4 sm:px-6 lg:px-[5vw] text-center justify-start pb-10">
         <div className="flex flex-col items-center w-full mt-[10vh]">
           {/* 🖼️ Logo */}
           <img
