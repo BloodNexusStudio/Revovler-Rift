@@ -23,7 +23,8 @@ const socialLinks = [
       <FaInstagram
         size={36}
         style={{
-          background: "radial-gradient(circle at 30% 107%, #f4e6d8 0%, #e5bf94 45%, #b7895e 60%, #7c4a2e 90%)",
+          background:
+            "radial-gradient(circle at 30% 107%, #f4e6d8 0%, #e5bf94 45%, #b7895e 60%, #7c4a2e 90%)",
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
         }}
@@ -42,7 +43,8 @@ const ImprintIcon = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     style={{
-      background: "radial-gradient(circle at 30% 107%, #f4e6d8 0%, #e5bf94 45%, #b7895e 60%, #7c4a2e 90%)",
+      background:
+        "radial-gradient(circle at 30% 107%, #f4e6d8 0%, #e5bf94 45%, #b7895e 60%, #7c4a2e 90%)",
       WebkitBackgroundClip: "text",
       WebkitTextFillColor: "transparent",
     }}
@@ -75,12 +77,18 @@ const Footer = () => {
         }
       `}</style>
 
+      {/* Imprint Modal */}
       {showModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 backdrop-blur-sm px-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
           <div className="bg-[#1b1b1b] text-[#bca78d] rounded-2xl shadow-xl p-6 w-full max-w-lg animate-fade-in">
             <div className="flex justify-between items-center mb-4">
               <h3 className="text-lg font-bold tracking-wide text-[#e5cfac]">Company Imprint</h3>
-              <button onClick={() => setShowModal(false)} className="text-[#c5a57c] hover:text-[#f4d8b4] text-xl">&times;</button>
+              <button
+                onClick={() => setShowModal(false)}
+                className="text-[#c5a57c] hover:text-[#f4d8b4] text-xl"
+              >
+                &times;
+              </button>
             </div>
             <div className="text-sm space-y-1 font-light tracking-wide text-left">
               <p><strong>Kahr Works GmbH</strong></p>
@@ -101,11 +109,13 @@ const Footer = () => {
         <div
           className="max-w-7xl w-full rounded-2xl p-12 mb-10 mx-4 md:mx-8"
           style={{
-            background: "linear-gradient(135deg, rgba(245, 227, 200, 0.25), rgba(231, 207, 166, 0.15))",
+            background:
+              "linear-gradient(135deg, rgba(245, 227, 200, 0.25), rgba(231, 207, 166, 0.15))",
             backdropFilter: "blur(18px)",
             WebkitBackdropFilter: "blur(18px)",
             boxShadow: "0 0 40px rgba(0, 0, 0, 0.4)",
-            animation: "vintageFadeIn 1.2s ease-out forwards, gentleFloat 6s ease-in-out infinite",
+            animation:
+              "vintageFadeIn 1.2s ease-out forwards, gentleFloat 6s ease-in-out infinite",
             opacity: 0,
           }}
         >
@@ -113,6 +123,7 @@ const Footer = () => {
             <h2 className="font-extrabold text-4xl uppercase text-center tracking-widest leading-tight text-[#f4d8b4]">
               CONNECT <br /> WITH US
             </h2>
+
             <div className="flex flex-wrap justify-center gap-12">
               {socialLinks.map(({ id, icon, label, url }) => (
                 <a
@@ -128,10 +139,13 @@ const Footer = () => {
                   }}
                 >
                   <span className="inline-block">{icon}</span>
-                  <span className="mt-2 font-semibold tracking-wider text-[#e8d6bc]">{label}</span>
+                  <span className="mt-2 font-semibold tracking-wider text-[#e8d6bc]">
+                    {label}
+                  </span>
                 </a>
               ))}
 
+              {/* Imprint Button */}
               <button
                 onClick={() => setShowModal(true)}
                 className="flex flex-col items-center text-sm hover:text-[#a8734c] transition duration-300 ease-in-out"
@@ -144,46 +158,44 @@ const Footer = () => {
                 <span className="inline-block">
                   <ImprintIcon />
                 </span>
-                <span className="mt-2 font-semibold tracking-wider text-[#e8d6bc]">IMPRINT</span>
+                <span className="mt-2 font-semibold tracking-wider text-[#e8d6bc]">
+                  IMPRINT
+                </span>
               </button>
             </div>
           </div>
         </div>
 
-        {/* Logos */}
+        {/* Logo Strip (responsive grid; visually consistent sizes) */}
         <div className="w-full">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="py-8 flex flex-wrap items-center justify-center gap-12">
-              {[logo1, logo2, logo3, logo4].map((src, i) => {
-                const isSmall = i === 2 || i === 3;
-                return (
-                  <div
-                    key={i}
-                    className="flex items-center justify-center bg-transparent"
-                    style={{
-                      height: isSmall ? "90px" : "120px",
-                      width: isSmall ? "90px" : "120px",
-                    }}
-                  >
-                    <img
-                      src={src}
-                      alt={`Partner Logo ${i + 1}`}
-                      className="max-h-full max-w-full object-contain opacity-95 hover:opacity-100 transition duration-300 p-2"
-                      loading="lazy"
-                      onError={(e) => {
-                        e.currentTarget.style.display = "none";
-                      }}
-                    />
-                  </div>
-                );
-              })}
+            <div className="py-8 grid grid-cols-2 sm:grid-cols-4 place-items-center gap-8 sm:gap-12">
+              {[logo1, logo2, logo3, logo4].map((src, i) => (
+                <div
+                  key={i}
+                  className="aspect-square w-24 sm:w-28 md:w-32 flex items-center justify-center"
+                >
+                  <img
+                    src={src}
+                    alt={`Partner Logo ${i + 1}`}
+                    className={`max-h-full max-w-full object-contain opacity-95 hover:opacity-100 transition
+                      ${i === 2 || i === 3 ? 'scale-90 sm:scale-95' : ''}`}
+                    loading="lazy"
+                    onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>
 
         {/* Copyright */}
         <div className="w-full text-center mt-6 text-xs text-[#725640] tracking-widest">
-          <a href="https://www.kahrworks.at" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.kahrworks.at"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             &copy; KAHRWORKS GMBH – All rights reserved.
           </a>
         </div>
