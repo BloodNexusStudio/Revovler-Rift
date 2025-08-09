@@ -231,7 +231,7 @@ const RiftCards = () => {
         <p className="mt-4">Enter the Rift. Fight for your soul. Extract — or die trying.</p>
       </Modal>
 
-      {/* Right card modal */}
+      {/* Right card modal (now includes Hell Deputies too) */}
       <Modal
         open={openRight}
         onClose={() => setOpenRight(false)}
@@ -241,6 +241,8 @@ const RiftCards = () => {
         <p>
           When the Rift tore through reality in 1944, Heaven and Hell unleashed their own soldiers to claim what was left of Earth. Two factions now wage a brutal war for power, relics, and the fate of mankind.
         </p>
+
+        {/* Cleric Deputies */}
         <h4 className="mt-4 font-vintage text-xl text-[#e4d6c3]">The Cleric Deputies</h4>
         <p>
           Holy doesn’t mean gentle. The Clerics are Heaven’s chosen — a militant order of righteous assassins sent to cleanse the Rift with fire, faith, and steel.
@@ -249,6 +251,17 @@ const RiftCards = () => {
           <li>Tactical, disciplined, and unforgiving</li>
           <li>Blessed gear and sanctified abilities</li>
           <li>Fight for purity — or die trying</li>
+        </ul>
+
+        {/* Hell Deputies — ADDED */}
+        <h4 className="mt-6 font-vintage text-xl text-[#e4d6c3]">The Hell Deputies</h4>
+        <p className="mt-1">
+          <strong>Condemned. Released. Unleashed.</strong> Once damned souls, now Hell’s elite killers. The Hell Deputies are chaos made flesh — brutal enforcers of infernal will, driven by vengeance and power. They strike without warning and kill without hesitation, wielding cursed tools and dark knowledge born in fire.
+        </p>
+        <ul className="mt-2 list-disc pl-5 space-y-1">
+          <li>Aggressive, relentless, and unpredictable</li>
+          <li>Demonic powers and cursed equipment</li>
+          <li>Fight for freedom — or burn with the weak</li>
         </ul>
       </Modal>
     </section>

@@ -43,7 +43,7 @@ const App = () => {
       <Banner3 togglePlay={togglePlay} />
       <Banner2 togglePlay={togglePlay} />
       <Banner5 togglePlay={togglePlay}/>
-      <Banner6 togglePlay={togglePlay}/>
+      {/* <Banner6 togglePlay={togglePlay}/> */}
       {/* <div className="bg-black min-h-screen">
       <Testimonials/>
     </div> */}

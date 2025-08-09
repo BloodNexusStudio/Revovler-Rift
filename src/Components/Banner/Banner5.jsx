@@ -2,9 +2,9 @@ import React from "react";
 
 const Banner5 = () => {
   return (
-    <div className="relative bg-black flex items-center justify-center min-h-screen pt-20 pb-12 px-4 sm:px-6 lg:px-8">
+    <div className="relative bg-black flex items-center justify-center pt-12 pb-4 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto w-full text-center">
-        <div className="space-y-8">
+        <div className="space-y-6">
           {/* Main Headline */}
           <h1
             data-aos="fade-up"
