@@ -44,9 +44,10 @@ const App = () => {
       <Banner2 togglePlay={togglePlay} />
       <Banner5 togglePlay={togglePlay}/>
       <Banner6 togglePlay={togglePlay}/>
-      <div className="bg-black min-h-screen">
+      {/* <div className="bg-black min-h-screen">
       <Testimonials/>
-    </div>
+    </div> */}
+    <Testimonials/>
       <Features />
       {/* <AppStore />  */}
       <Banner7 togglePlay={togglePlay}/>

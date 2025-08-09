@@ -7,13 +7,11 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 
-// ✅ Import partner logos (adjust paths if needed)
 import logo1 from "../../assets/logo/Logo1.png";
 import logo2 from "../../assets/logo/Logo2.png";
 import logo3 from "../../assets/logo/Logo3.png";
 import logo4 from "../../assets/logo/Logo4.png";
 
-// Social media links
 const socialLinks = [
   { id: 1, icon: <FaRedditAlien size={36} />, label: "REDDIT", url: "https://www.reddit.com/user/RevolverRift/" },
   { id: 2, icon: <FaYoutube size={36} />, label: "YOUTUBE", url: "https://www.youtube.com/@revolverrift" },
@@ -25,8 +23,7 @@ const socialLinks = [
       <FaInstagram
         size={36}
         style={{
-          background:
-            "radial-gradient(circle at 30% 107%, #f4e6d8 0%, #e5bf94 45%, #b7895e 60%, #7c4a2e 90%)",
+          background: "radial-gradient(circle at 30% 107%, #f4e6d8 0%, #e5bf94 45%, #b7895e 60%, #7c4a2e 90%)",
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
         }}
@@ -37,7 +34,6 @@ const socialLinks = [
   },
 ];
 
-// Custom Imprint SVG Icon
 const ImprintIcon = () => (
   <svg
     width="36"
@@ -46,8 +42,7 @@ const ImprintIcon = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     style={{
-      background:
-        "radial-gradient(circle at 30% 107%, #f4e6d8 0%, #e5bf94 45%, #b7895e 60%, #7c4a2e 90%)",
+      background: "radial-gradient(circle at 30% 107%, #f4e6d8 0%, #e5bf94 45%, #b7895e 60%, #7c4a2e 90%)",
       WebkitBackgroundClip: "text",
       WebkitTextFillColor: "transparent",
     }}
@@ -80,7 +75,6 @@ const Footer = () => {
         }
       `}</style>
 
-      {/* Overlay Modal */}
       {showModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 backdrop-blur-sm px-4">
           <div className="bg-[#1b1b1b] text-[#bca78d] rounded-2xl shadow-xl p-6 w-full max-w-lg animate-fade-in">
@@ -103,12 +97,11 @@ const Footer = () => {
 
       <footer className="bg-black text-[#4b3a2f] pt-16 pb-8 px-6 font-serif select-none flex flex-col justify-center items-center min-h-[500px]">
 
-        {/* Glassmorphic Social Container */}
+        {/* Social Section */}
         <div
           className="max-w-7xl w-full rounded-2xl p-12 mb-10 mx-4 md:mx-8"
           style={{
-            background:
-              "linear-gradient(135deg, rgba(245, 227, 200, 0.25), rgba(231, 207, 166, 0.15))",
+            background: "linear-gradient(135deg, rgba(245, 227, 200, 0.25), rgba(231, 207, 166, 0.15))",
             backdropFilter: "blur(18px)",
             WebkitBackdropFilter: "blur(18px)",
             boxShadow: "0 0 40px rgba(0, 0, 0, 0.4)",
@@ -139,7 +132,6 @@ const Footer = () => {
                 </a>
               ))}
 
-              {/* Imprint Button */}
               <button
                 onClick={() => setShowModal(true)}
                 className="flex flex-col items-center text-sm hover:text-[#a8734c] transition duration-300 ease-in-out"
@@ -158,24 +150,33 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* ✅ Logo Strip (larger, same size, no borders) */}
+        {/* Logos */}
         <div className="w-full">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="py-8 flex flex-wrap items-center justify-center gap-12">
-              {[logo1, logo2, logo3, logo4].map((src, i) => (
-                <div
-                  key={i}
-                  className="flex items-center justify-center h-24 w-44 bg-transparent"
-                >
-                  <img
-                    src={src}
-                    alt={`Partner Logo ${i + 1}`}
-                    className="max-h-full max-w-full object-contain opacity-95 hover:opacity-100 transition duration-300"
-                    loading="lazy"
-                    onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                  />
-                </div>
-              ))}
+              {[logo1, logo2, logo3, logo4].map((src, i) => {
+                const isSmall = i === 2 || i === 3;
+                return (
+                  <div
+                    key={i}
+                    className="flex items-center justify-center bg-transparent"
+                    style={{
+                      height: isSmall ? "90px" : "120px",
+                      width: isSmall ? "90px" : "120px",
+                    }}
+                  >
+                    <img
+                      src={src}
+                      alt={`Partner Logo ${i + 1}`}
+                      className="max-h-full max-w-full object-contain opacity-95 hover:opacity-100 transition duration-300 p-2"
+                      loading="lazy"
+                      onError={(e) => {
+                        e.currentTarget.style.display = "none";
+                      }}
+                    />
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
