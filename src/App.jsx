@@ -16,6 +16,9 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Banner6 from "./Components/Banner/Banner6";
 import Banner7 from "./Components/Banner/Banner7";
+import Blog from "./Components/Blog";
+import { Route, Routes } from "react-router-dom";
+import BlogList from "./Components/Blog/blogList";
 const App = () => {
   const [isPlay, setIsPlay] = useState(false);
 
@@ -36,6 +39,12 @@ const App = () => {
   return (
     <main className="overflow-x-hidden bg-white dark:bg-black text-black dark:text-white duration-300">
       {/* <Navbar /> */}
+        <Routes>
+        {/* Home Page */}
+        <Route
+          path="/"
+          element={
+      <>
       <Hero togglePlay={togglePlay} /> 
       {/* <Hero2 togglePlay={togglePlay} /> */}
       <Quotes /> 
@@ -55,6 +64,11 @@ const App = () => {
 
       {/* Video Player */}
       <PopupPlayer isPlay={isPlay} togglePlay={togglePlay} />
+      </>
+          }/>
+          <Route path="/blog" element={<BlogList/>} />
+          <Route path="/blog/:link" element={<Blog />} />
+          </Routes>
     </main>
   );
 };
