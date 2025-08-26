@@ -10,7 +10,8 @@ const Banner7 = () => {
           <h1
             data-aos="fade-up"
             data-aos-delay="300"
-            className="text-4xl sm:text-5xl md:text-6xl font-custom font-bold tracking-wide text-[#e4d6c3]"
+             className="text-[clamp(1.8rem,4vw,3rem)] font-bold text-[#e4d6c3]"
+            style={{ fontFamily: "'CustomGameFont', serif" }}
           >
             A Huge Thank You to Our Early Supporters
           </h1>

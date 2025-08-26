@@ -21,6 +21,7 @@ import Banner9 from "./Components/Banner/Banner9";
 import Banner10 from "./Components/Banner/Banner10";
 import { NewsCardGrid, AllBlogsPage, BlogPostPage } from "./Components/Features/NewsCardGrid";
 import Showcase from "./Components/Showcase/Showcase";
+import Partners from "./Components/Partners/partners";
 
 // This component handles scrolling to the top of the page on route changes.
 const ScrollToTop = () => {
@@ -87,7 +88,7 @@ const App = () => {
           } />
           <Route path="/showcase" element={<Showcase />} />
           <Route path="/contact" element={<Footer />} />
-          <Route path="/partners" element={<Footer />} />
+          <Route path="/partners" element={<Partners />} />
           <Route path="/content" element={
             <>
               <Banner />
@@ -97,7 +98,7 @@ const App = () => {
               <NewsCardGrid />
             </>} />
           
-          {/* <Route path="/blogs" element={<AllBlogsPage />} /> */}
+          <Route path="/blogs" element={<AllBlogsPage />} />
           <Route path="/blog/:blogId" element={<BlogPostPage />} />
         </Routes>
         <PopupPlayer isPlay={isPlay} togglePlay={togglePlay} />

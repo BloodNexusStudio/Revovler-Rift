@@ -149,7 +149,7 @@ export const AllBlogsPage = () => {
             // onClick={() => navigate(-1)} // This navigates back one step in history
             className="text-[#b89a6f] border border-[#b89a6f] px-4 py-2 rounded-md transition-all duration-300 hover:bg-[#b89a6f] hover:text-black font-custom"
           >
-            <Link to="/" >
+            <Link to="/content" >
               ← Back
             </Link>
            

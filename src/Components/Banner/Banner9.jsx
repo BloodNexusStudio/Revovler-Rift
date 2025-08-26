@@ -50,7 +50,7 @@ const Banner9 = () => {
               <div
                 data-aos="fade-up"
                 data-aos-delay="500"
-                className="text-base md:text-lg leading-relaxed font-vintage text-[#F5F5F5] space-y-4 text-center"
+                 className="text-base md:text-lg leading-relaxed text-gray-300 space-y-4 bg-left font-vintage"
               >
                 <p className="font-semibold font-custom text-[#e4d6c3] text-3xl md:text-4xl lg:text-5xl">
                   Forsaken Villages

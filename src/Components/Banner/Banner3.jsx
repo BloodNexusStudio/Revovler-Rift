@@ -6,7 +6,9 @@ import CardImg1 from "../../assets/newassets/7.png";
 
 // --- Small UI bits ---
 const Badge = ({ children }) => (
-  <span className="inline-block rounded bg-white/10 px-2 py-1 text-[11px] tracking-wide uppercase text-[#e4d6c3]">
+  <span 
+  className="inline-block rounded bg-white/10 px-2 py-1 text-[11px] tracking-wide uppercase text-[#e4d6c3]"
+  >
     {children}
   </span>
 );
@@ -54,7 +56,9 @@ const Modal = ({ open, onClose, title, image, children }) => {
       aria-labelledby="rr-modal-title"
       onClick={(e) => { if (e.target === overlayRef.current) onClose(); }}
     >
-      <div className="relative w-full max-w-6xl overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] shadow-2xl ring-1 ring-white/5">
+      <div 
+      className="relative w-full max-w-6xl overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] shadow-2xl ring-1 ring-white/5"
+      >
         <button
           ref={closeBtnRef}
           onClick={onClose}
@@ -89,25 +93,27 @@ const FeatureCard = ({
 }) => (
   <article
     onClick={onOpen}
-    className={`group overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] shadow-2xl ring-1 ring-white/5 transition hover:border-white/20 cursor-pointer h-full md:flex ${className}`}
+    className={`group overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] shadow-2xl ring-1 ring-white/5 transition hover:border-white/20 cursor-pointer h-full${className}`}
   >
     {/* Media column — equal height via flex */}
-    <div className="w-full md:w-1/2 md:min-h-[420px]">
+    <div className="w-1/2 md:min-h-[220px]">
       {/* mobile: keep aspect; md+: fill column */}
-      <div className="aspect-[16/9] md:aspect-auto md:h-full">
+      <div className="aspect-[16/9] md:aspect-auto md:h-[220px]">
         <ImgFill src={image} alt={title} />
       </div>
     </div>
 
     {/* Text column */}
-    <div className="flex w-full md:w-1/2 flex-col justify-between p-7 md:p-8">
+    <div 
+    className="flex w-full md:w-1/2 flex-col justify-between p-7 md:p-8"
+    >
       <div className="space-y-3">
         <Badge>{category}</Badge>
         <h3 className="font-vintage text-3xl md:text-[34px] leading-tight text-[#e4d6c3]">
           {title}
         </h3>
         <p className="text-xs md:text-sm text-[#c6b8a3]">{meta}</p>
-        <p className="mt-1 text-base md:text-lg text-[#d0c4b0]">
+        <p className="mt-1 text-base md:text-sm text-[#d0c4b0]">
           {excerpt} From war-torn streets to supernatural chaos, every encounter
           forces hard choices—survival, power, and the cost of your soul.
         </p>

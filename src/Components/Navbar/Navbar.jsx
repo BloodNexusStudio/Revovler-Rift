@@ -35,17 +35,11 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 w-full z-[9999] text-white transition-all duration-300 ease-in-out
-       ${
-          isScrolled 
-            ? 'bg-black bg-opacity-90 backdrop-blur-sm' 
-            : 'bg-transparent'
-        }
-      `}>
-      <div className="w-full py-2 flex justify-between items-center px-6 md:px-12"> {/* Increased vertical and horizontal padding */}
+    <header className={`fixed w-full z-[1] text-white bg-black   `}>
+      <div className="w-full py-2 flex justify-between items-center px-6 md:px-12"> 
         
         {/* 🔰 Logo on the left */}
-        <Link to="/" className="flex items-center"> {/* Use Link for navigation */}
+        <Link to="/" className="flex items-center">
           <img
             src={logo}
             alt="Logo"
@@ -56,12 +50,11 @@ const Navbar = () => {
         </Link>
 
         {/* 🖥 Desktop Navigation on the right */}
-        <div className="hidden md:flex items-center gap-10"> {/* Increased gap */}
-            {/* {NavLinks.map(({ id, name, link }) => ( */}
+        <div className="hidden md:flex items-center gap-10"> 
 
-          <ul className="flex items-center gap-10"> {/* Increased gap */}
+          <ul className="flex items-center gap-10"> 
               <li  className="flex items-center">
-                <Link to="/" className="group flex items-center"> {/* Use Link for navigation */}
+                <Link to="/" className="group flex items-center"> 
                   
                   <button className="font-custom text-2xl hover:scale-110 
                           transition-transform duration-300 drop-shadow">
@@ -71,7 +64,7 @@ const Navbar = () => {
               </li>
               
               <li  className="flex items-center">
-                <Link to="/news" className="group flex items-center"> {/* Use Link for navigation */}
+                <Link to="/news" className="group flex items-center"> 
                   
                   <button className="font-custom text-2xl hover:scale-110 
                           transition-transform duration-300 drop-shadow">
@@ -80,7 +73,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li  className="flex items-center">
-                <Link to="/credits" className="group flex items-center"> {/* Use Link for navigation */}
+                <Link to="/credits" className="group flex items-center"> 
                   
                   <button className="font-custom text-2xl hover:scale-110 
                           transition-transform duration-300 drop-shadow">
@@ -89,7 +82,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li  className="flex items-center">
-                <Link to="/showcase" className="group flex items-center"> {/* Use Link for navigation */}
+                <Link to="/showcase" className="group flex items-center">
                   
                   <button className="font-custom text-2xl hover:scale-110 
                           transition-transform duration-300 drop-shadow">
@@ -98,7 +91,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li  className="flex items-center">
-                <Link to="/content" className="group flex items-center"> {/* Use Link for navigation */}
+                <Link to="/content" className="group flex items-center"> 
                   
                   <button className="font-custom text-2xl hover:scale-110 
                           transition-transform duration-300 drop-shadow">
@@ -107,7 +100,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li  className="flex items-center">
-                <Link to="/showcase" className="group flex items-center"> {/* Use Link for navigation */}
+                <Link to="/partners" className="group flex items-center">
                   
                   <button className="font-custom text-2xl hover:scale-110 
                           transition-transform duration-300 drop-shadow">
@@ -116,7 +109,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li  className="flex items-center">
-                <Link to="/showcase" className="group flex items-center"> {/* Use Link for navigation */}
+                <Link to="/shop" className="group flex items-center"> 
                   
                   <button className="font-custom text-2xl hover:scale-110 
                           transition-transform duration-300 drop-shadow">
@@ -125,7 +118,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li  className="flex items-center">
-                <Link to="/contact" className="group flex items-center"> {/* Use Link for navigation */}
+                <Link to="/contact" className="group flex items-center"> 
                   
                   <button className="font-custom text-2xl hover:scale-110 
                           transition-transform duration-300 drop-shadow">
@@ -147,17 +140,14 @@ const Navbar = () => {
           </ul>
              {/* ))}  */}
 
-          <a href="#" className="ml-3 flex items-center "> {/* Increased margin left */}
+          <a href="#" className="ml-3 flex items-center ">
             <img
-              src={BuyTheGameButton}
+              src={BuyTheGameButton}              // Change the image to wishlist
               alt="Buy the Game"
               className="h-10 md:h-16 w-auto hover:scale-110 
                           transition-transform duration-300 drop-shadow"
             />
-            {/* <button className="font-custom text-3xl hover:scale-110 
-                          transition-transform duration-300 drop-shadow">
-                            Buy The Game 
-            </button> */}
+            
           </a>
         </div>
 
