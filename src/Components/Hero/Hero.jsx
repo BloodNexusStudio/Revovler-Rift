@@ -1,101 +1,62 @@
-import React, { useEffect, useState } from 'react';
-import bgVideo from '../../assets/newassets/1.mp4';
-import crackedBox from '../../assets/image.png';
-import revolverTitle from '../../assets/IMG.png';
+import React, { useState, useEffect } from "react";
+import { FaPlay } from "react-icons/fa";
+import trailerThumb from "../../assets/brown_street.jpeg";
 
-const HeroCountdown = () => {
-  const calculateTimeLeft = () => {
-    const targetDate = new Date('2025-08-29T00:00:00+02:00');
-    const difference = targetDate - new Date();
-    let timeLeft = {};
+const Hero = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoId = "cqGjhVJWtEg"; // replace with your trailer video ID
 
-    if (difference > 0) {
-      timeLeft = {
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: String(Math.floor((difference / (1000 * 60 * 60)) % 24)).padStart(2, '0'),
-        minutes: String(Math.floor((difference / 1000 / 60) % 60)).padStart(2, '0'),
-      };
-    }
-    return timeLeft;
-  };
-
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-
+  // Load Gothic font dynamically
   useEffect(() => {
-    const timer = setInterval(() => setTimeLeft(calculateTimeLeft()), 60000);
-    return () => clearInterval(timer);
+    const link = document.createElement("link");
+    link.href =
+      "https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap";
+    link.rel = "stylesheet";
+    document.head.appendChild(link);
   }, []);
 
   return (
-    <section className="relative w-full min-h-screen text-white font-serif overflow-hidden">
-      {/* 🎥 Background Video */}
-      <video
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
-        src={bgVideo}
-        autoPlay
-        loop
-        muted
-        playsInline
-      />
-
-      {/* 🔳 Overlays */}
-      <div
-        className="absolute inset-0 z-10"
-        style={{
-          background: 'linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.65))',
-        }}
-      />
-      <div
-        className="absolute inset-0 z-15 pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse at center, rgba(0,0,0,0) 40%, rgba(0,0,0,0.75) 100%)',
-        }}
-      />
-
-      {/* 📜 Content */}
-      <div className="relative z-20 flex flex-col h-full px-4 sm:px-6 lg:px-[5vw] text-center justify-start pb-10">
-        <div className="flex flex-col items-center w-full mt-[10vh]">
-          {/* 🖼️ Logo */}
+    <section className="relative w-full h-screen overflow-hidden bg-black">
+      {!isPlaying ? (
+        // 🎬 Custom Thumbnail + Play Button
+        <div className="relative w-full h-full">
           <img
-            src={revolverTitle}
-            alt="Revolver Rift Title"
-            className="w-[clamp(250px,45vw,500px)] mb-4"
-            style={{ animation: 'bounceDrop 1.2s ease-out forwards' }}
+            src={trailerThumb}
+            alt="Trailer Thumbnail"
+            className="w-full h-full object-cover"
           />
 
-          {/* ⏳ Countdown */}
-          <div className="flex flex-wrap justify-center gap-x-6 gap-y-8">
-            {Object.entries(timeLeft).map(([unit, value], index) => (
-              <div
-                key={unit}
-                className="flex flex-col items-center justify-center rounded-xl"
-                style={{
-                  width: 'clamp(7.5rem, 22vw, 9.5rem)',
-                  minHeight: 'clamp(7.5rem, 22vw, 9.5rem)',
-                  padding: '2rem 1rem',
-                  backgroundImage: `url(${crackedBox})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  backgroundRepeat: 'no-repeat',
-                  border: '1px solid rgba(165, 139, 111, 0.3)',
-                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.4)',
-                  animation: `bounceDrop 1s ease-out forwards`,
-                  animationDelay: `${index * 0.25}s`,
-                }}
-              >
-                <span className="text-[1.8rem] sm:text-[2rem] md:text-[2.5rem] text-[#f5ebd9] font-mono tracking-widest">
-                  {value}
-                </span>
-                <span className="text-sm uppercase text-[#e0d2bd] mt-2 tracking-wider">
-                  {unit}
-                </span>
-              </div>
-            ))}
+          {/* Overlay content */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center">
+            <p
+              className="text-white  text-4xl md:text-6xl tracking-widest mb-6 font-custom"
+            >
+              PLAY TEASER
+            </p>
+            <button
+              onClick={() => setIsPlaying(true)}
+              className="group flex items-center justify-center w-24 h-24 rounded-full border-4 border-white/80 bg-transparent text-white transition duration-300 hover:scale-110 hover:border-[#e0c4a2] shadow-[0_0_20px_rgba(255,255,255,0.4)]"
+            >
+              <FaPlay
+                size={32}
+                className="ml-1 text-white group-hover:text-[#e0c4a2]"
+              />
+            </button>
           </div>
         </div>
-      </div>
+      ) : (
+        // 🎥 Fullscreen YouTube iframe
+        <iframe
+          className="absolute inset-0 w-full h-full"
+          src={`https://www.youtube.com/embed/${videoId}?autoplay=1&loop=1&playlist=${videoId}&controls=1&modestbranding=1&rel=0`}
+          title="YouTube Video Background"
+          frameBorder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowFullScreen
+        />
+      )}
     </section>
   );
 };
 
-export default HeroCountdown;
+export default Hero;

@@ -49,12 +49,7 @@ const BlogDetail = () => {
           {blog.fullDescription}
         </p>
 
-        <Link
-          to="/blog"
-          className="inline-block mt-8 text-[#b89a6f] hover:underline"
-        >
-          ← Back to Blogs
-        </Link>
+        
       </div>
     </div>
   );

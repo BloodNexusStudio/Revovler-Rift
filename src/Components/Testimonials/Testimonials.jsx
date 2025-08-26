@@ -29,12 +29,12 @@ const TestimonialSlider = () => {
       {/* Header */}
       <div className="w-full max-w-5xl text-center mb-10 md:mb-16 px-2 sm:px-4">
         <h1
-          className="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-[#b89a6f]"
-          style={{ fontFamily: "'Cinzel', serif" }}
+          className="text-[clamp(1.8rem,4vw,3rem)] font-bold text-[#e4d6c3]"
+          style={{ fontFamily: "'CustomGameFont', serif" }}
         >
           Developer&apos;s Insights
         </h1>
-        <p className="text-sm sm:text-base md:text-lg text-gray-400 mt-2">
+        <p className="text-sm sm:text-base md:text-lg text-[#e4d6c3]-400 mt-2">
           Whispers from those who&apos;ve walked the edge.
         </p>
       </div>

@@ -178,22 +178,23 @@ const RiftCards = () => {
   return (
     <section className="bg-black py-24">
       <div className="mx-auto max-w-[1500px] px-8 md:px-12 lg:px-16">
-        <h2 className="mb-12 text-center font-vintage text-4xl md:text-5xl tracking-wide text-[#e4d6c3]">
+        <h2 className="mb-12 text-center font-custom text-4xl md:text-5xl tracking-wide text-[#e4d6c3]">
           Latest From The Rift
         </h2>
 
         {/* Equal heights on desktop */}
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3 items-stretch">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3 items-stretch ">
           {/* Feature spans 2 cols */}
           <div className="md:col-span-2 h-full">
             <FeatureCard
               image={FeatureImg}
               category="FEATURE"
-              title="What Makes Revolver Rift Unique"
+              title={<span className="font-custom text-3xl">What Makes Revolver Rift Unique</span>}
               meta="a day ago"
               excerpt="This is not your typical shooter. A war-torn 1944 collides with the supernatural—two factions, evolving objectives, and choices with teeth."
               onOpen={() => setOpenFeature(true)}
               className="h-full"
+              titleClassName="font-custom"
             />
           </div>
 
@@ -202,8 +203,7 @@ const RiftCards = () => {
             <CompactCard
               image={CardImg1}
               badge="FACTIONS"
-              title="Two Forces. No Mercy."
-              meta="3 days ago"
+              title={<span className="font-custom text-3xl">Two Forces. No Mercy</span>}
               excerpt="When the Rift tore open in 1944, Heaven and Hell sent their own soldiers. Two factions fight for relics, power, and the fate of mankind—pick your side."
               onOpen={() => setOpenRight(true)}
               className="h-full"

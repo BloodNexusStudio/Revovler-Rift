@@ -10,7 +10,7 @@ const Banner7 = () => {
           <h1
             data-aos="fade-up"
             data-aos-delay="300"
-            className="text-4xl sm:text-5xl md:text-6xl font-vintage font-bold tracking-wide text-[#f5ebd9]"
+            className="text-4xl sm:text-5xl md:text-6xl font-custom font-bold tracking-wide text-[#e4d6c3]"
           >
             A Huge Thank You to Our Early Supporters
           </h1>
@@ -39,7 +39,7 @@ const Banner7 = () => {
           <p
             data-aos="fade-up"
             data-aos-delay="600"
-            className="text-base sm:text-lg md:text-xl leading-relaxed font-vintage text-[#d0c4b0] px-4 font-bold text-center"
+            className="text-base sm:text-lg md:text-xl leading-relaxed font-custom text-[#e4d6c3] px-4 font-bold text-center"
           >
             — The Revolver Rift Team
           </p>
