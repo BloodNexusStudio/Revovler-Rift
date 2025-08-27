@@ -4,7 +4,7 @@ function Partners() {
 
     const cardData = [
   {
-    title: "AAA Stage 1 – Creator",
+    title: "AAA Stage 1 Creator",
     description: "For all streamers and content creators – regardless of existing partnerships.",
     benefits: [
       "Access to all DLCs",
@@ -13,7 +13,7 @@ function Partners() {
     ]
   },
   {
-    title: "AAA Stage 2 – Partner",
+    title: "AAA Stage 2 Partner",
     description: "Requirement: At least *1 year of active streaming experience*.",
     benefits: [
       "All Stage 1 benefits",
@@ -23,7 +23,7 @@ function Partners() {
     ]
   },
   {
-    title: "AAA Stage 3 – Ambassador",
+    title: "AAA Stage 3 Ambassador",
     description: "The highest tier of our partnership program – exclusive and individually tailored.",
     benefits: [
       "All Stage 2 benefits",
@@ -55,7 +55,7 @@ function Partners() {
                     </p>
                 </div>
             </div>
-            <div className="">
+            <div className="text-base md:text-lg pt-28  leading-relaxed text-gray-300 space-y-4 bg-left font-vintage">
                 <div className="flex flex-col md:flex-row justify-center gap-24 p-10 cursor-pointer">
                     {cardData.map((card, index) => (
                         <div
@@ -63,7 +63,7 @@ function Partners() {
                         className="bg-[#1E1E1E] text-[#F5F5F5] border border-[#AA0000] bg-opacity-100 text-white rounded-2xl shadow-lg p-6 w-full md:w-1/3 hover:scale-105 transition-transform duration-300"
                         >
                         
-                        <h2 className="text-2xl font-custom mb-2">{card.title}</h2>
+                        <h2 className="font-semibold font-custom text-[#e4d6c3] pb-6 flex justify-center text-3xl md:text-4xl lg:text-5xl">{card.title}</h2>
 
                         <p className="text-gray-300 mb-4">{card.description}</p>
                         <ul className="list-disc list-inside text-gray-200 space-y-1">
@@ -78,7 +78,6 @@ function Partners() {
             
             <div 
              data-aos="fade-up"
-            data-aos-delay="300"
             className="text-base md:text-lg leading-relaxed text-gray-300 space-y-4 bg-left font-vintage text-white rounded-2xl shadow-lg p-6 text-center max-w-2xl mx-auto">
                 <h2 className="font-semibold font-custom text-[#e4d6c3] pt-28 pb-4 flex justify-center text-3xl md:text-4xl lg:text-5xl">
                     Application & Process

@@ -93,21 +93,22 @@ const FeatureCard = ({
 }) => (
   <article
     onClick={onOpen}
-    className={`group overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] shadow-2xl ring-1 ring-white/5 transition hover:border-white/20 cursor-pointer h-full${className}`}
+     className={`inline-block overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a]
+   shadow-2xl ring-1 ring-white/5 transition hover:border-white/20 cursor-pointer ${className}`}
   >
     {/* Media column — equal height via flex */}
-    <div className="w-1/2 md:min-h-[220px]">
+    <div className="w-auto md:min-h-[220px]">
       {/* mobile: keep aspect; md+: fill column */}
-      <div className="aspect-[16/9] md:aspect-auto md:h-[220px]">
+      <div className="inline-block overflow-hidden rounded-t-2xl">
         <ImgFill src={image} alt={title} />
       </div>
     </div>
 
     {/* Text column */}
     <div 
-    className="flex w-full md:w-1/2 flex-col justify-between p-7 md:p-8"
+    className="flex w-auto flex-col justify-between p-7 md:p-8"
     >
-      <div className="space-y-3">
+      <div className="p-6 space-y-3">
         <Badge>{category}</Badge>
         <h3 className="font-vintage text-3xl md:text-[34px] leading-tight text-[#e4d6c3]">
           {title}
@@ -139,10 +140,11 @@ const CompactCard = ({
 }) => (
   <article
     onClick={onOpen}
-    className={`group overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] shadow-2xl ring-1 ring-white/5 transition hover:border-white/20 cursor-pointer ${className}`}
+ className={`inline-block overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a]
+   shadow-2xl ring-1 ring-white/5 transition hover:border-white/20 cursor-pointer ${className}`}
   >
     {/* Top banner image */}
-    <div className="h-[220px] sm:h-[240px] md:h-[260px] lg:h-[280px] overflow-hidden rounded-t-2xl">
+    <div className="inline-block overflow-hidden rounded-t-2xl">
       <ImgFill src={image} alt={title} />
     </div>
 
@@ -150,27 +152,26 @@ const CompactCard = ({
     <div className="h-[2px] bg-white/5" />
 
     {/* Content */}
-    <div className="p-6 space-y-3">
-      <div className="text-[11px] tracking-wide uppercase text-[#bfb29a]/90">
-        <Badge>{badge}</Badge>
-      </div>
-
-      <h4 className="font-vintage text-2xl leading-snug text-[#e4d6c3]">
-        {title}
-      </h4>
-
-      <p className="text-sm text-[#c6b8a3]">
-        {excerpt}
-      </p>
-
-      <div className="mt-4 flex items-center justify-between">
-        <button
-          onClick={(e) => { e.stopPropagation(); onOpen(); }}
-          className="inline-flex items-center gap-2 rounded-xl border border-white/10 px-3 py-2 text-xs text-[#e4d6c3] transition hover:border-white/20 hover:bg-white/5"
-        >
-          Read more →
-        </button>
-        <span className="text-xs text-[#8f8473]">{meta}</span>
+    <div className="pt-6">
+      <div className="p-7 md:p-8 space-y-3">
+        <div className="text-[11px] tracking-wide uppercase text-[#bfb29a]/90">
+          <Badge>{badge}</Badge>
+        </div>
+        <h4 className="font-vintage text-2xl leading-snug text-[#e4d6c3]">
+          {title}
+        </h4>
+        <p className="text-sm text-[#c6b8a3]">
+          {excerpt}
+        </p>
+        <div className="mt-4 flex items-center justify-between">
+          <button
+            onClick={(e) => { e.stopPropagation(); onOpen(); }}
+            className="inline-flex items-center gap-2 rounded-xl border border-white/10 px-3 py-2 text-xs text-[#e4d6c3] transition hover:border-white/20 hover:bg-white/5"
+          >
+            Read more →
+          </button>
+          <span className="text-xs text-[#8f8473]">{meta}</span>
+        </div>
       </div>
     </div>
   </article>
@@ -189,9 +190,9 @@ const RiftCards = () => {
         </h2>
 
         {/* Equal heights on desktop */}
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3 items-stretch ">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 justify-items-center">
           {/* Feature spans 2 cols */}
-          <div className="md:col-span-2 h-full">
+          <div className="md:col-span-1 h-full">
             <FeatureCard
               image={FeatureImg}
               category="FEATURE"
@@ -199,7 +200,7 @@ const RiftCards = () => {
               meta="a day ago"
               excerpt="This is not your typical shooter. A war-torn 1944 collides with the supernatural—two factions, evolving objectives, and choices with teeth."
               onOpen={() => setOpenFeature(true)}
-              className="h-full"
+              className="max-w-[450px]"
               titleClassName="font-custom"
             />
           </div>
@@ -212,7 +213,7 @@ const RiftCards = () => {
               title={<span className="font-custom text-3xl">Two Forces. No Mercy</span>}
               excerpt="When the Rift tore open in 1944, Heaven and Hell sent their own soldiers. Two factions fight for relics, power, and the fate of mankind—pick your side."
               onOpen={() => setOpenRight(true)}
-              className="h-full"
+             className="max-w-[450px] h-full"
             />
           </div>
         </div>
