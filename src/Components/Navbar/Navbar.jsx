@@ -7,6 +7,14 @@ import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
 const NavLinks = [
   { id: 1, name: "Home", link: "/" },
+  { id: 1, name: "News", link: "/news" },
+  { id: 1, name: "Credits", link: "/credits" },
+  { id: 1, name: "Showcase", link: "/showcase" },
+  { id: 1, name: "Content", link: "/content" },
+  { id: 1, name: "Partners", link: "/partners" },
+  { id: 1, name: "Shop", link: "/shop" },
+  { id: 1, name: "Contact", link: "/contact" },
+
 ];
 
 const Navbar = () => {
@@ -169,20 +177,21 @@ const Navbar = () => {
           showMenu ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0 overflow-hidden"
         }`}
       >
-        <div className="flex flex-col items-center py-3 gap-3"> {/* Increased vertical padding and gap */}
+        <div className="flex flex-col items-center py-3 gap-2 bg-black"> {/* Increased vertical padding and gap */}
           {NavLinks.map(({ id, name, link }) => (
-            <Link
-              key={id}
-              to={link}
-              onClick={handleLinkClick}
-              className="block"
-            >
-              <img
-                src={home}
-                alt={name}
-                className="h-6 w-auto hover:scale-110 transition-transform duration-300" // Increased height
-              />
-            </Link>
+            <div className="font-custom text-lg">
+              <Link
+                key={id}
+                to={link}
+                onClick={handleLinkClick}
+                className="block"
+              >
+               {name}
+               </Link>
+              
+            </div>
+
+            
           ))}
           <a href="#" onClick={handleLinkClick}>
             <img
