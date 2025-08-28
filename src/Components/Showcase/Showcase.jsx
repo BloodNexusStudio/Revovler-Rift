@@ -6,6 +6,7 @@ import image7 from "../../assets/shot2.png";
 import image8 from "../../assets/newassets/9.png";
 import image9 from "../../assets/newassets/2.png";
 import image10 from "../../assets/newassets/6.png";
+import bgImage from '../../assets/Texturelabs_Grunge_353M.jpg';
 
 const Showcase = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -19,7 +20,9 @@ const Showcase = () => {
   };
 
   return (
-    <div className="space-y-6 px-6 bg-black py-24">
+    <div className="space-y-6 px-6 bg-black py-24"
+     style={{ backgroundImage: `url(${bgImage})` }}
+    >
       <div className="flex w-full justify-between items-center gap-4">
         {[image6, image7, image8].map((img, idx) => (
           <img

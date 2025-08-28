@@ -1,5 +1,6 @@
 import React from "react";
-import poster from "../../assets/poster3.png";
+import poster from "../../assets/content1.png";
+import bgImage from '../../assets/Texturelabs_Grunge_353M.jpg';
 
 const Banner10 = ({ togglePlay }) => {
   const navbarHeight = 80; // match your actual navbar height
@@ -42,7 +43,7 @@ const Banner10 = ({ togglePlay }) => {
               <div
                 data-aos="fade-up"
                 data-aos-delay="500"
-                 className="text-base md:text-lg leading-relaxed text-gray-300 space-y-4 bg-left font-vintage"
+                 className="text-base md:text-lg leading-relaxed text-gray-300 space-y-4 bg-left "
               >
                 <p className="font-semibold font-custom text-[#e4d6c3] text-3xl md:text-4xl lg:text-5xl">
                   Into the Abyss

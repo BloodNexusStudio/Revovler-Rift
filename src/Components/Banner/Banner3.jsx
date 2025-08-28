@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import bgImage from '../../assets/Texturelabs_Grunge_353M.jpg';
 
 // === Replace these with your actual asset paths ===
 import FeatureImg from "../../assets/newassets/9.png";
@@ -54,6 +55,7 @@ const Modal = ({ open, onClose, title, image, children }) => {
       role="dialog"
       aria-modal="true"
       aria-labelledby="rr-modal-title"
+       style={{ backgroundImage: `url(${bgImage})` }}
       onClick={(e) => { if (e.target === overlayRef.current) onClose(); }}
     >
       <div 
@@ -93,10 +95,11 @@ const FeatureCard = ({
 }) => (
   <article
     onClick={onOpen}
+     style={{ backgroundImage: `url(${bgImage})` }}
      className={`inline-block overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a]
    shadow-2xl ring-1 ring-white/5 transition hover:border-white/20 cursor-pointer ${className}`}
   >
-    {/* Media column — equal height via flex */}
+    {/* Media column  equal height via flex */}
     <div className="w-auto md:min-h-[220px]">
       {/* mobile: keep aspect; md+: fill column */}
       <div className="inline-block overflow-hidden rounded-t-2xl">
@@ -106,7 +109,7 @@ const FeatureCard = ({
 
     {/* Text column */}
     <div 
-    className="flex w-auto flex-col justify-between p-7 md:p-8"
+    className="flex w-auto flex-col justify-between p-7 md:p-8"     // left card css
     >
       <div className="p-6 space-y-3">
         <Badge>{category}</Badge>
@@ -115,13 +118,12 @@ const FeatureCard = ({
         </h3>
         <p className="text-xs md:text-sm text-[#c6b8a3]">{meta}</p>
         <p className="mt-1 text-base md:text-sm text-[#d0c4b0]">
-          {excerpt} From war-torn streets to supernatural chaos, every encounter
-          forces hard choices—survival, power, and the cost of your soul.
+          {excerpt} 
         </p>
       </div>
       <button
         onClick={(e) => { e.stopPropagation(); onOpen(); }}
-        className="mt-6 inline-flex w-fit items-center gap-2 rounded-xl border border-white/10 px-4 py-2.5 text-sm text-[#e4d6c3] transition hover:border-white/20 hover:bg-white/5"
+        className="mt-6 ml-6 inline-flex w-fit items-center gap-2 rounded-xl border border-white/10 px-4 py-2.5 text-sm text-[#e4d6c3] transition hover:border-white/20 hover:bg-white/5"
       >
         Read more →
       </button>
@@ -139,6 +141,7 @@ const CompactCard = ({
   image, badge, title, meta, excerpt, onOpen, className = ""
 }) => (
   <article
+   style={{ backgroundImage: `url(${bgImage})` }}
     onClick={onOpen}
  className={`inline-block overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a]
    shadow-2xl ring-1 ring-white/5 transition hover:border-white/20 cursor-pointer ${className}`}
@@ -152,21 +155,24 @@ const CompactCard = ({
     <div className="h-[2px] bg-white/5" />
 
     {/* Content */}
-    <div className="pt-6">
-      <div className="p-7 md:p-8 space-y-3">
-        <div className="text-[11px] tracking-wide uppercase text-[#bfb29a]/90">
-          <Badge>{badge}</Badge>
+    <div className="">
+      <div className="flex w-auto flex-col justify-between p-7 md:p-8">          {/* Right card css */}
+        <div className="p-6 space-y-3">
+          <div className="text-[11px] tracking-wide uppercase text-[#bfb29a]/90">
+            <Badge>{badge}</Badge>
+          </div>
+          <h4 className="font-vintage text-2xl leading-snug text-[#e4d6c3]">
+            {title}
+          </h4>
+          <p className="text-sm  text-[#c6b8a3]">
+            {excerpt}
+            
+          </p>
         </div>
-        <h4 className="font-vintage text-2xl leading-snug text-[#e4d6c3]">
-          {title}
-        </h4>
-        <p className="text-sm text-[#c6b8a3]">
-          {excerpt}
-        </p>
         <div className="mt-4 flex items-center justify-between">
           <button
             onClick={(e) => { e.stopPropagation(); onOpen(); }}
-            className="inline-flex items-center gap-2 rounded-xl border border-white/10 px-3 py-2 text-xs text-[#e4d6c3] transition hover:border-white/20 hover:bg-white/5"
+           className="mt-6 ml-6 inline-flex w-fit items-center gap-2 rounded-xl border border-white/10 px-4 py-2.5 text-sm text-[#e4d6c3] transition hover:border-white/20 hover:bg-white/5"
           >
             Read more →
           </button>
@@ -183,7 +189,9 @@ const RiftCards = () => {
   const [openRight, setOpenRight] = useState(false);
 
   return (
-    <section className="bg-black py-24">
+    <section className="bg-black py-24"
+     style={{ backgroundImage: `url(${bgImage})` }}
+    >
       <div className="mx-auto max-w-[1500px] px-8 md:px-12 lg:px-16">
         <h2 className="mb-12 text-center font-custom text-4xl md:text-5xl tracking-wide text-[#e4d6c3]">
           Latest From The Rift
@@ -197,8 +205,8 @@ const RiftCards = () => {
               image={FeatureImg}
               category="FEATURE"
               title={<span className="font-custom text-3xl">What Makes Revolver Rift Unique</span>}
-              meta="a day ago"
-              excerpt="This is not your typical shooter. A war-torn 1944 collides with the supernatural—two factions, evolving objectives, and choices with teeth."
+              // meta="a day ago"
+              excerpt="This is not your typical shooter. A war-torn 1944 collides with the supernatural two factions, evolving objectives, and choices with teeth."
               onOpen={() => setOpenFeature(true)}
               className="max-w-[450px]"
               titleClassName="font-custom"
@@ -210,10 +218,10 @@ const RiftCards = () => {
             <CompactCard
               image={CardImg1}
               badge="FACTIONS"
-              title={<span className="font-custom text-3xl">Two Forces. No Mercy</span>}
-              excerpt="When the Rift tore open in 1944, Heaven and Hell sent their own soldiers. Two factions fight for relics, power, and the fate of mankind—pick your side."
+              title={<span className="font-custom text-3xl">When two forces clash, there is no mercy</span>}
+              excerpt="When the Rift tore open in 1944, Heaven and Hell sent their own soldiers. Two factions fight for relics, power, and the fate of mankind pick your side."
               onOpen={() => setOpenRight(true)}
-             className="max-w-[450px] h-full"
+             className="max-w-[450px] "
             />
           </div>
         </div>
@@ -228,21 +236,21 @@ const RiftCards = () => {
       >
         <p><strong>This is not your typical shooter:</strong></p>
         <ul className="list-disc pl-5 space-y-2">
-          <li><strong>Alternate History Warfare:</strong> Fight in a gritty, war-torn 1944 where the supernatural collides with World War II.</li>
-          <li><strong>Light vs. Darkness:</strong> Choose your side — the righteous Cleric Deputys or the brutal Cursed Hell Deputys; each with unique playstyles, Perks, and twisted morality.</li>
+          <li><strong>Alternate History Warfare:</strong> Fight in a gritty, wartorn 1944 where the supernatural collides with World War II.</li>
+          <li><strong>Light vs. Darkness:</strong> Choose your side the righteous Cleric Deputys or the brutal Cursed Hell Deputys each with unique playstyles, Perks, and twisted morality.</li>
           <li><strong>Catch the enemies:</strong> Track enemies by supernatural Perks, sound, skill, and strategy. Every fight is earned.</li>
-          <li><strong>Dynamic Objectives:</strong> Artifacts, VIP rescues, demonic bosses, anomalies, Arena, Rift Royal, Warmup — only what you extract survives.</li>
+          <li><strong>Dynamic Objectives:</strong> Artifacts, VIP rescues, demonic bosses, anomalies, Arena, Rift Royal, Warmup only what you extract survives.</li>
           <li><strong>Risk &amp; Power Systems:</strong> Devil’s Chair deals, Rift Storm chaos, and fate-shaping choices.</li>
           <li><strong>Style Meets Grit:</strong> WWII weapons meet supernatural gear. Blood, tension, and tactical decisions define every moment.</li>
         </ul>
-        <p className="mt-4">Enter the Rift. Fight for your soul. Extract — or die trying.</p>
+        <p className="mt-4">Enter the Rift. Fight for your soul. Extract or die trying.</p>
       </Modal>
 
       {/* Right card modal (now includes Hell Deputies too) */}
       <Modal
         open={openRight}
         onClose={() => setOpenRight(false)}
-        title="Two Forces. No Mercy. — Choose Your Side"
+        title="Two Forces. No Mercy. Choose Your Side"
         image={CardImg1}
       >
         <p>
@@ -252,23 +260,23 @@ const RiftCards = () => {
         {/* Cleric Deputies */}
         <h4 className="mt-4 font-vintage text-xl text-[#e4d6c3]">The Cleric Deputies</h4>
         <p>
-          Holy doesn’t mean gentle. The Clerics are Heaven’s chosen — a militant order of righteous assassins sent to cleanse the Rift with fire, faith, and steel.
+          Holy doesn’t mean gentle. The Clerics are Heaven’s chosen a militant order of righteous assassins sent to cleanse the Rift with fire, faith, and steel.
         </p>
         <ul className="mt-2 list-disc pl-5 space-y-1">
           <li>Tactical, disciplined, and unforgiving</li>
           <li>Blessed gear and sanctified abilities</li>
-          <li>Fight for purity — or die trying</li>
+          <li>Fight for purity or die trying</li>
         </ul>
 
-        {/* Hell Deputies — ADDED */}
+        {/* Hell Deputies  ADDED */}
         <h4 className="mt-6 font-vintage text-xl text-[#e4d6c3]">The Hell Deputies</h4>
         <p className="mt-1">
-          <strong>Condemned. Released. Unleashed.</strong> Once damned souls, now Hell’s elite killers. The Hell Deputies are chaos made flesh — brutal enforcers of infernal will, driven by vengeance and power. They strike without warning and kill without hesitation, wielding cursed tools and dark knowledge born in fire.
+          <strong>Condemned. Released. Unleashed.</strong> Once damned souls, now Hell’s elite killers. The Hell Deputies are chaos made flesh brutal enforcers of infernal will, driven by vengeance and power. They strike without warning and kill without hesitation, wielding cursed tools and dark knowledge born in fire.
         </p>
         <ul className="mt-2 list-disc pl-5 space-y-1">
           <li>Aggressive, relentless, and unpredictable</li>
           <li>Demonic powers and cursed equipment</li>
-          <li>Fight for freedom — or burn with the weak</li>
+          <li>Fight for freedom or burn with the weak</li>
         </ul>
       </Modal>
     </section>

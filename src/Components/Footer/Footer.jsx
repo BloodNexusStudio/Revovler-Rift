@@ -4,6 +4,7 @@ import logo1 from "../../assets/logo/Logo1.png";
 import logo2 from "../../assets/logo/Logo2.png";
 import logo3 from "../../assets/logo/Logo3.png";
 import logo4 from "../../assets/logo/Logo4.png";
+import bgImage from '../../assets/Texturelabs_Grunge_353M.jpg';
 
 const SocialLink = ({ href, imgSrc, label, onClick }) => {
   const ref = useRef(null);
@@ -38,10 +39,14 @@ const SocialLink = ({ href, imgSrc, label, onClick }) => {
       rel={onClick ? undefined : "noopener noreferrer"}
       className="flex flex-col items-center gap-3.5 p-4"
       ref={ref}
+      
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onClick={handleClick}
-      style={{ transition: 'transform 0.3s ease-out' }}
+      style={{ transition: 'transform 0.3s ease-out' }
+      
+    }
+      
     >
       <img style={{ height: '50px' }} src={imgSrc} alt={label} />
       <span style={{ fontSize: '20px', color: 'white' }}>{label}</span>
@@ -98,18 +103,25 @@ const Footer = () => {
   ];
 
   return (
-    <div className="relative">
+    <div
+    // style={{ backgroundImage: `url(${bgImage})` }}
+    className="relative">
       {/* Top angled divider */}
       <svg
         className="absolute top-0 left-0 w-full h-12 text-black"
         preserveAspectRatio="none"
         viewBox="0 0 100 100"
+        
       >
         <polygon fill="currentColor" points="0,100 100,0 100,100" />
       </svg>
 
-      <footer className="bg-black text-white relative z-10">
-        <div className="container mx-auto p-8 md:p-16 lg:p-20">
+      <footer className=" text-white relative z-10"
+        style={{ backgroundImage: `url(${bgImage})` }}
+      >
+        <div className="container mx-auto p-8 md:p-16 lg:p-20"
+        // style={{ backgroundImage: `url(${bgImage})` }}
+        >
           <div className="p-8">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
               <h2 className="text-5xl md:text-6xl font-black uppercase leading-none font-custom lg:col-span-1 text-[#e4d6c3]">
@@ -137,7 +149,7 @@ const Footer = () => {
                     {[logo1, logo2, logo3, logo4].map((src, i) => (
                       <div
                         key={i}
-                        className="aspect-square w-20 sm:w-16 md:w-20 flex items-center justify-center"
+                        className="aspect-square w-24 sm:w-20 md:w-28 flex items-center justify-center"
                       >
                         <img
                           src={src}
@@ -183,7 +195,7 @@ const Footer = () => {
             <div className="text-sm space-y-1 font-light tracking-wide text-left">
               <p><strong>KahrWorks GmbH</strong></p>
               <p>Bobletten 23, 6850 Dornbirn, Austria</p>
-              <p>Email: <a href="mailto:office@kahrworks.at" className="hover:text-[#e8d6bc]">office@kahrworks.at</a></p>
+              {/* <p>Email: <a href="mailto:office@kahrworks.at" className="hover:text-[#e8d6bc]">office@kahrworks.at</a></p> */}
               <p>Website: <a href="https://www.kahrworks.at" target="_blank" rel="noopener noreferrer" className="hover:text-[#e8d6bc]">www.kahrworks.at</a></p>
               <p>USt-IdNr.: AT U75459914</p>
               <p>Registernummer: FN531874v</p>

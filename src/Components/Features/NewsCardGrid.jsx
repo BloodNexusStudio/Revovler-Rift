@@ -6,9 +6,11 @@ import { SlNote } from "react-icons/sl";
 
 // Your image imports
 import img1 from "../../assets/newassets/colt 19111.png";
+
 import img2 from "../../assets/newassets/trench gun 3.png";
 import img3 from "../../assets/newassets/p08 2.png";
 import img4 from "../../assets/img4.jpeg";
+import bgImage from '../../assets/Texturelabs_Grunge_353M.jpg';
 
 // ===================================
 // News Data (Modified)
@@ -20,9 +22,9 @@ export const NewsData = [
     icon: <FaCameraRetro className="text-4xl text-accent duration-300" />,
     image: img1,
     description:
-      "Creating a truly immersive experience isn’t just about visuals — it’s about the small details that pull players into another world.",
+      "Creating a truly immersive experience isn’t just about visuals it’s about the small details that pull players into another world.",
     fullDescription:
-      "Creating a truly immersive experience isn’t just about visuals — it’s about the small details that pull players into another world. From ambient sounds to the way light filters through a room, these subtle touches invite players to feel like they’re not just playing a game, but living in it. We focus on atmosphere over perfection, knowing that mood and engagement are what matter most. Every corner tells a story, and even the smallest detail can change how players experience the world we create.",
+      "Creating a truly immersive experience isn’t just about visuals it’s about the small details that pull players into another world. From ambient sounds to the way light filters through a room, these subtle touches invite players to feel like they’re not just playing a game, but living in it. We focus on atmosphere over perfection, knowing that mood and engagement are what matter most. Every corner tells a story, and even the smallest detail can change how players experience the world we create.",
     date: "2025-08-26",
     delay: "300",
   },
@@ -32,9 +34,9 @@ export const NewsData = [
     icon: <GiNotebook className="text-4xl text-accent duration-300" />,
     image: img2,
     description:
-      "Suspense is the art of leaving players uncertain about what comes next. It’s not just the big moments that make players tense — it’s the quiet ones too.",
+      "Suspense is the art of leaving players uncertain about what comes next. It’s not just the big moments that make players tense it’s the quiet ones too.",
     fullDescription:
-      "Suspense is the art of leaving players uncertain about what comes next. It’s not just the big moments that make players tense — it’s the quiet ones too. The moments of silence, slow pacing, and what players don’t see, often have the greatest impact. Creating suspense means building tension without giving too much away, keeping players on edge and making every twist feel unexpected. It’s about playing with their minds as much as the gameplay itself.",
+      "Suspense is the art of leaving players uncertain about what comes next. It’s not just the big moments that make players tense it’s the quiet ones too. The moments of silence, slow pacing, and what players don’t see, often have the greatest impact. Creating suspense means building tension without giving too much away, keeping players on edge and making every twist feel unexpected. It’s about playing with their minds as much as the gameplay itself.",
     date: "2025-08-20",
     delay: "400",
   },
@@ -58,7 +60,7 @@ export const NewsData = [
     description:
       "Exploring upcoming trends and technologies that will shape the gaming industry.",
     fullDescription:
-      "The gaming industry is constantly evolving, with new technologies like cloud gaming, AI-driven NPCs, and haptic feedback revolutionizing the player experience. We're looking at how these innovations will create more personalized and dynamic worlds. The future is not just about better graphics—it’s about more intelligent and responsive game worlds that adapt to every player.",
+      "The gaming industry is constantly evolving, with new technologies like cloud gaming, AI-driven NPCs, and haptic feedback revolutionizing the player experience. We're looking at how these innovations will create more personalized and dynamic worlds. The future is not just about better graphics it’s about more intelligent and responsive game worlds that adapt to every player.",
     date: "2025-08-01",
     delay: "600",
   },
@@ -71,7 +73,8 @@ export const NewsCardGrid = () => {
   const displayedBlogs = NewsData.slice(0, 3);
 
   return (
-    <div className="w-full bg-black text-[#d1c7b7] pt-4 pb-0 "> 
+    <div className="w-full bg-black text-[#d1c7b7] pt-4 pb-0 "
+     style={{ backgroundImage: `url(${bgImage})` }}> 
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-center items-center mb-12 mt-0 py-20">
           <h1
@@ -141,7 +144,9 @@ export const AllBlogsPage = () => {
   }, []);
 
   return (
-    <div className="w-full bg-black text-[#d1c7b7] pt-28 pb-20"> {/* Changed pt-16 to pt-28 */}
+    <div className="w-full bg-black text-[#d1c7b7] pt-28 pb-20"
+     style={{ backgroundImage: `url(${bgImage})` }}
+    > {/* Changed pt-16 to pt-28 */}
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back Button */}
         <div className="mb-8">
@@ -216,7 +221,9 @@ export const BlogPostPage = () => {
 
   if (!blogPost) {
     return (
-      <div className="w-full bg-black text-[#d1c7b7] py-20 text-center">
+      <div className="w-full bg-black text-[#d1c7b7] py-20 text-center"
+       style={{ backgroundImage: `url(${bgImage})` }}
+      >
         <h1
           className="text-4xl font-bold text-[#b89a6f]"
           style={{ fontFamily: "'CustomGameFont', serif" }}
@@ -231,7 +238,9 @@ export const BlogPostPage = () => {
   }
 
   return (
-    <div className="w-full bg-black text-[#d1c7b7] pt-32 pb-20">
+    <div className="w-full bg-black text-[#d1c7b7] pt-32 pb-20"
+     style={{ backgroundImage: `url(${bgImage})` }}
+     >
       <div className="max-w-screen-md mx-auto px-4 sm:px-6 lg:px-8">
         <h1
           className="text-5xl font-bold mb-6 text-[#f4e1c1]"

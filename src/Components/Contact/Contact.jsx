@@ -1,5 +1,6 @@
 import Footer from "../Footer/Footer";
 import { useState } from "react";
+import bgImage from '../../assets/Texturelabs_Grunge_353M.jpg';
 
 
 function Contact (){
@@ -30,7 +31,9 @@ function Contact (){
             }
         };
     return(
-        <div className="bg-black py-48">
+        <div className="bg-black py-48"
+         style={{ backgroundImage: `url(${bgImage})` }}
+        >
            <form
            onSubmit={handleSubmit}
            className="max-w-xl mx-auto p-6 bg-[#1E1E1E] border border-[#AA0000] shadow-lg rounded-2xl">
@@ -42,7 +45,7 @@ function Contact (){
                     placeholder="Your Name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                    className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-blue-500 transition"
                     />
                     <input
                     type="email"
@@ -51,16 +54,16 @@ function Contact (){
                     placeholder="Your Email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                    className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-blue-500 transition"
                     />
-                    <input
-                    type="text"
+                    <textarea
                     name="comment"
                     id="comment"
                     placeholder="Comment"
                     value={formData.comment}
                     onChange={handleChange}
-                    className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                    rows={5}
+                    className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-blue-500 transition resize-y"
                     />
                     <button
                     type="submit"

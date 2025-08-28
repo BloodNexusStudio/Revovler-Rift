@@ -38,7 +38,7 @@ const Banner4 = ({ togglePlay }) => {
                 data-aos-delay="600"
                 className="text-base sm:text-lg leading-relaxed font-vintage text-[#d0c4b0]"
               >
-                A strange celestial event—the Rift—has torn through the fabric of reality, imbuing certain bloodlines with uncanny abilities. Now, factions clash in the cobblestone streets and iron-wrought factories, vying for control of this newfound power. You are a wanderer, a duelist, caught in the crossfire of this new, brutal age.
+                A strange celestial event the Rift has torn through the fabric of reality, imbuing certain bloodlines with uncanny abilities. Now, factions clash in the cobblestone streets and iron-wrought factories, vying for control of this newfound power. You are a wanderer, a duelist, caught in the crossfire of this new, brutal age.
               </p>
 
               {/* CTA buttons */}

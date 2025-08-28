@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import BuyTheGameButton from "../../assets/Group.png";
-import home from "../../assets/HOME.png";
+import redtexture from "../../assets/red.jpeg";
 import logo from "../../assets/IMG_0983.png"; // 👈 Add your logo asset
 import { HiMenuAlt1, HiMenuAlt3 } from "react-icons/hi";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
@@ -43,7 +43,11 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className={`fixed w-full z-[1] text-white bg-black   `}>
+    <header className={`fixed w-full  text-white  z-40  `
+    }
+      style={{ backgroundImage: `url(${redtexture})` }}
+    >
+      
       <div className="w-full py-2 flex justify-between items-center px-6 md:px-12"> 
         
         {/* 🔰 Logo on the left */}
@@ -58,7 +62,7 @@ const Navbar = () => {
         </Link>
 
         {/* 🖥 Desktop Navigation on the right */}
-        <div className="hidden md:flex items-center gap-10"> 
+        <div className="hidden flex justify-center md:flex items-center gap-10"> 
 
           <ul className="flex items-center gap-10"> 
               <li  className="flex items-center">
@@ -130,7 +134,7 @@ const Navbar = () => {
                   
                   <button className="font-custom text-2xl hover:scale-110 
                           transition-transform duration-300 drop-shadow">
-                            Contact
+                            Contact Us
                   </button>
                 </Link>
               </li>
@@ -148,7 +152,7 @@ const Navbar = () => {
           </ul>
              {/* ))}  */}
 
-          <a href="#" className="ml-3 flex items-center ">
+          {/* <a href="#" className="ml-3 flex items-center ">
             <img
               src={BuyTheGameButton}              // Change the image to wishlist
               alt="Buy the Game"
@@ -156,7 +160,7 @@ const Navbar = () => {
                           transition-transform duration-300 drop-shadow"
             />
             
-          </a>
+          </a> */}
         </div>
 
         {/* 📱 Mobile Menu Button */}

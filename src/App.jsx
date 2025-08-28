@@ -23,6 +23,7 @@ import { NewsCardGrid, AllBlogsPage, BlogPostPage } from "./Components/Features/
 import Showcase from "./Components/Showcase/Showcase";
 import Partners from "./Components/Partners/partners";
 import Contact from "./Components/Contact/Contact";
+import Shop from "./Components/Shop/Shop";
 
 // This component handles scrolling to the top of the page on route changes.
 const ScrollToTop = () => {
@@ -75,7 +76,7 @@ const App = () => {
                 {/* <Testimonials /> */}
                 {/* <NewsCardGrid /> */}
                 {/* <Banner7 togglePlay={togglePlay} /> */}
-                <Footer />
+                {/* <Footer /> */}
               </>
             }
           />
@@ -88,7 +89,7 @@ const App = () => {
             </>
           } />
           <Route path="/showcase" element={<Showcase />} />
-          {/* <Route path="/contact" element={<Footer />} /> */}
+          <Route path="/shop" element={<Shop />} />
           <Route path="/partners" element={<Partners />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/content" element={

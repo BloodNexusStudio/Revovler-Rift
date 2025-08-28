@@ -1,5 +1,6 @@
 import React from "react";
-import poster from "../../assets/poster1.png";
+import poster from "../../assets/content2.png";
+import bgImage from '../../assets/Texturelabs_Grunge_353M.jpg';
 
 const Banner = () => {
   const navbarHeight = 80; // match your actual navbar height
@@ -61,7 +62,7 @@ const Banner = () => {
               <div
                 data-aos="fade-up"
                 data-aos-delay="500"
-                 className="text-base md:text-lg leading-relaxed text-gray-300 space-y-4 bg-left font-vintage"
+                 className="text-base md:text-lg leading-relaxed text-gray-300 space-y-4 bg-left "
               >
                 <p >
                   A hardcore PvPvE Extraction Shooter with tactical depth and hellish stakes.

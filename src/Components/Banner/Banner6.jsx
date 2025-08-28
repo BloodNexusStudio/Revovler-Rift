@@ -20,7 +20,7 @@ const Banner6 = () => {
               data-aos-delay="900"
               className="text-base sm:text-lg md:text-xl leading-relaxed font-vintage text-[#d0c4b0] px-2 sm:px-6"
             >
-              <strong>Condemned. Released. Unleashed.</strong> Once damned souls, now Hell’s elite killers. The Hell Deputies are chaos made flesh — brutal enforcers of infernal will, driven by vengeance and power. They strike without warning and kill without hesitation, wielding cursed tools and dark knowledge born in fire.
+              <strong>Condemned. Released. Unleashed.</strong> Once damned souls, now Hell’s elite killers. The Hell Deputies are chaos made flesh brutal enforcers of infernal will, driven by vengeance and power. They strike without warning and kill without hesitation, wielding cursed tools and dark knowledge born in fire.
             </p>
             <ul
               data-aos="fade-up"
@@ -29,7 +29,7 @@ const Banner6 = () => {
             >
               <li>Aggressive, relentless, and unpredictable</li>
               <li>Demonic powers and cursed equipment</li>
-              <li>Fight for freedom — or burn with the weak</li>
+              <li>Fight for freedom or burn with the weak</li>
             </ul>
           </div>
 

@@ -11,9 +11,9 @@ export const NewsData = [
     icon: <FaCameraRetro className="text-4xl text-accent duration-300" />,
     image: img1,
     description:
-      "Creating a truly immersive experience isn’t just about visuals — it’s about the small details that pull players into another world.",
+      "Creating a truly immersive experience isn’t just about visuals it’s about the small details that pull players into another world.",
     fullDescription:
-      "Creating a truly immersive experience isn’t just about visuals — it’s about the small details that pull players into another world. From ambient sounds to the way light filters through a room, these subtle touches invite players to feel like they’re not just playing a game, but living in it. We focus on atmosphere over perfection, knowing that mood and engagement are what matter most. Every corner tells a story, and even the smallest detail can change how players experience the world we create.",
+      "Creating a truly immersive experience isn’t just about visuals it’s about the small details that pull players into another world. From ambient sounds to the way light filters through a room, these subtle touches invite players to feel like they’re not just playing a game, but living in it. We focus on atmosphere over perfection, knowing that mood and engagement are what matter most. Every corner tells a story, and even the smallest detail can change how players experience the world we create.",
     link: "art-of-building-immersion",
     delay: "300",
   },
@@ -22,9 +22,9 @@ export const NewsData = [
     icon: <GiNotebook className="text-4xl text-accent duration-300" />,
     image: img2,
     description:
-      "Suspense is the art of leaving players uncertain about what comes next. It’s not just the big moments that make players tense — it’s the quiet ones too.",
+      "Suspense is the art of leaving players uncertain about what comes next. It’s not just the big moments that make players tense it’s the quiet ones too.",
     fullDescription:
-      "Suspense is the art of leaving players uncertain about what comes next. It’s not just the big moments that make players tense — it’s the quiet ones too. The moments of silence, slow pacing, and what players don’t see, often have the greatest impact. Creating suspense means building tension without giving too much away, keeping players on edge and making every twist feel unexpected. It’s about playing with their minds as much as the gameplay itself.",
+      "Suspense is the art of leaving players uncertain about what comes next. It’s not just the big moments that make players tense it’s the quiet ones too. The moments of silence, slow pacing, and what players don’t see, often have the greatest impact. Creating suspense means building tension without giving too much away, keeping players on edge and making every twist feel unexpected. It’s about playing with their minds as much as the gameplay itself.",
     link:"power-of-uncertainity",
     delay: "400",
   },
