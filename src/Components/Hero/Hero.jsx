@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import bgVideo from '../../assets/newassets/1.mp4';
 import crackedBox from '../../assets/image.png';
 import revolverTitle from '../../assets/IMG.png';
-import crackedglass from '../../assets/cracked2.png';
 
 
 const HeroCountdown = () => {
