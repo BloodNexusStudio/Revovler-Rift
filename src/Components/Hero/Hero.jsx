@@ -5,7 +5,7 @@ import revolverTitle from '../../assets/IMG.png';
 
 const HeroCountdown = () => {
   const calculateTimeLeft = () => {
-    const targetDate = new Date('2025-08-29T00:00:00+02:00');
+    const targetDate = new Date('2025-08-29T13:00:00+02:00');
     const difference = targetDate - new Date();
     let timeLeft = {};
 
