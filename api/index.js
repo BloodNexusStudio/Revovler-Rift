@@ -1,7 +1,7 @@
 const express = require("express")
 const cors = require("cors")
 const nodemailer = require("nodemailer")
-const PORT = 8000
+const PORT = 3000
 const app = express()
 app.use(express.json())
 app.use(cors())
@@ -41,6 +41,10 @@ app.post('/contact', async (req, res) => {
     res.status(500).json({ success: false, message: 'Failed to send email' });
   }
 });
+
+app.get("/", async(req, res)=>{
+  res.json({message:"working"})
+})
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
