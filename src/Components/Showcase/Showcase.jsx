@@ -20,7 +20,7 @@ const Showcase = () => {
   };
 
   return (
-    <div className="space-y-6 px-6 bg-black py-24"
+    <div className="space-y-6 px-6 bg-black pt-36"
      style={{ backgroundImage: `url(${bgImage})` }}
     >
       <div className="flex w-full justify-between items-center gap-4">

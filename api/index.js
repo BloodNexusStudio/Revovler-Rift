@@ -6,7 +6,7 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-app.post('/contact', async (req, res) => {
+app.post('/api/contact', async (req, res) => {
     const { name, email, comment } = req.body;
     
     // Validation
@@ -42,7 +42,7 @@ app.post('/contact', async (req, res) => {
   }
 });
 
-app.get("/", async(req, res)=>{
+app.get("/api", async(req, res)=>{
   res.json({message:"working"})
 })
 
@@ -50,4 +50,5 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
+// Export the Express API for Vercel
 module.exports = app;

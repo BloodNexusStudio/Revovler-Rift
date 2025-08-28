@@ -7,6 +7,7 @@ import weapon3 from "../../assets/newassets/Mosin Nagant 3.png";
 import weapon4 from "../../assets/newassets/p08 2.png";
 import weapon5 from "../../assets/newassets/trench gun 3.png";
 import weapon6 from "../../assets/newassets/WINCHESTER1.png";
+import bgImage from '../../assets/Texturelabs_Grunge_353M.jpg';
 
 const weapons = [weapon1, weapon2, weapon3, weapon4, weapon5, weapon6];
 
@@ -34,7 +35,9 @@ export default function GunsShowcase() {
   }, []);
 
   return (
-    <div className="bg-black py-10 relative">
+    <div className="bg-black py-4 relative"
+    style={{ backgroundImage: `url(${bgImage})` }}
+    >
       {/* Scrolling container */}
       <div
         ref={containerRef}

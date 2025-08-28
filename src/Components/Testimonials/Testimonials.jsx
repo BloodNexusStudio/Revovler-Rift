@@ -15,6 +15,7 @@ import logo2 from "../../assets/logo/Logo2.png";
 import logo3 from "../../assets/logo/Logo3.png";
 import logo4 from "../../assets/logo/Logo4.png";
 
+
 // Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -34,7 +35,7 @@ const TestimonialSlider = () => {
   return (
     <section 
      style={{ backgroundImage: `url(${bgImage})` }}
-    className="w-full min-h-screen flex flex-col justify-center items-center bg-black text-white px-4 py-16 md:py-20">
+    className="w-full min-h-screen flex flex-col justify-center items-center bg-black text-white px-4 py-16 md:py-40">
       {/* Header */}
       <div className="w-full max-w-5xl text-center mb-10 md:mb-16 px-2 sm:px-4">
         <h1

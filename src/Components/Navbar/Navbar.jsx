@@ -20,6 +20,7 @@ const NavLinks = [
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [clicked, setClicked] = useState(false);
 
   const toggleMenu = () => {
     setShowMenu((prev) => !prev);
@@ -62,10 +63,16 @@ const Navbar = () => {
         </Link>
 
         {/* 🖥 Desktop Navigation on the right */}
+        <div 
+        
+        >
         <div className="hidden flex justify-center md:flex items-center gap-10"> 
 
           <ul className="flex items-center gap-10"> 
-              <li  className="flex items-center">
+              <li 
+      //         onClick={() => setClicked(!clicked)}
+      //  className={`cursor-pointer ${clicked ? "text-gray-500" : "text-white"}`}
+              >
                 <Link to="/" className="group flex items-center"> 
                   
                   <button className="font-custom text-2xl hover:scale-110 
@@ -161,6 +168,7 @@ const Navbar = () => {
             />
             
           </a> */}
+        </div>
         </div>
 
         {/* 📱 Mobile Menu Button */}
