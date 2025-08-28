@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import bgVideo from '../../assets/newassets/1.mp4';
 import crackedBox from '../../assets/image.png';
 import revolverTitle from '../../assets/IMG.png';
+import crackedglass from '../../assets/cracked2.png';
+
 
 const HeroCountdown = () => {
   const calculateTimeLeft = () => {
@@ -15,15 +17,23 @@ const HeroCountdown = () => {
         hours: String(Math.floor((difference / (1000 * 60 * 60)) % 24)).padStart(2, '0'),
         minutes: String(Math.floor((difference / 1000 / 60) % 60)).padStart(2, '0'),
       };
+
+      
     }
     return timeLeft;
   };
 
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  // const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());                
+     const [timeLeft, setTimeLeft] = useState({                         // This is frozen time the above is active time
+      days: 1,
+      hours: '05',
+      minutes: '30',
+     });
+
 
   useEffect(() => {
-    const timer = setInterval(() => setTimeLeft(calculateTimeLeft()), 60000);
-    return () => clearInterval(timer);
+    // const timer = setInterval(() => setTimeLeft(calculateTimeLeft()), 60000);
+    // return () => clearInterval(timer);
   }, []);
 
   return (
@@ -53,7 +63,7 @@ const HeroCountdown = () => {
       />
 
       {/* 📜 Content */}
-      <div className="relative z-20 flex flex-col h-full px-4 sm:px-6 lg:px-[5vw] text-center justify-start pb-10">
+      <div className="relative z-20 flex flex-col h-full  sm:px-6 lg:px-[5vw] text-center justify-start pb-10">
         <div className="flex flex-col items-center w-full mt-[10vh]">
           {/* 🖼️ Logo */}
           <img
@@ -92,9 +102,28 @@ const HeroCountdown = () => {
               </div>
             ))}
           </div>
+          
+             {/* <img
+            src={crackedglass}
+            alt="Revolver Rift Title"
+            className=" w-full h-[100px] my-20 "
+            // style={{ animation: 'bounceDrop 1.2s ease-out forwards' }}
+          /> */}
         </div>
+          <div className=''>
+            
+            <h2 className='  text-white pt-40  text-3xl md:text-4xl lg:text-4xl'>
+              Heads up, Deputies! The Revolver Rift teaser needs a bit more time. 
+              We’ve switched to<span className='font-bold text-[#AA0000]'> Unreal Engine 5.6</span> to bring you maximum quality. 
+              Better late than lame. </h2>
+          </div>
       </div>
+
+
+      
     </section>
+
+    
   );
 };
 

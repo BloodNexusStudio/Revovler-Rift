@@ -9,10 +9,18 @@ import {
   Mousewheel,
 } from "swiper/modules";
 
+
+import logo1 from "../../assets/logo/Logo1.png";
+import logo2 from "../../assets/logo/Logo2.png";
+import logo3 from "../../assets/logo/Logo3.png";
+import logo4 from "../../assets/logo/Logo4.png";
+
+
 // Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
+import bgImage from '../../assets/Texturelabs_Grunge_353M.jpg';
 
 const testimonials = [
   { id: 1, name: "Lead Narrative Designer", quote: "Sometimes we scream ideas across the room like maniacs and that’s how a Devil Chair is born." },
@@ -25,16 +33,18 @@ const testimonials = [
 
 const TestimonialSlider = () => {
   return (
-    <section className="w-full min-h-screen flex flex-col justify-center items-center bg-black text-white px-4 py-16 md:py-20">
+    <section 
+     style={{ backgroundImage: `url(${bgImage})` }}
+    className="w-full min-h-screen flex flex-col justify-center items-center bg-black text-white px-4 py-16 md:py-40">
       {/* Header */}
       <div className="w-full max-w-5xl text-center mb-10 md:mb-16 px-2 sm:px-4">
         <h1
-          className="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-[#b89a6f]"
-          style={{ fontFamily: "'Cinzel', serif" }}
+          className="text-[clamp(1.8rem,4vw,3rem)] font-bold text-[#e4d6c3]"
+          style={{ fontFamily: "'CustomGameFont', serif" }}
         >
           Developer&apos;s Insights
         </h1>
-        <p className="text-sm sm:text-base md:text-lg text-gray-400 mt-2">
+        <p className="text-sm sm:text-base md:text-lg text-[#e4d6c3]-400 mt-2">
           Whispers from those who&apos;ve walked the edge.
         </p>
       </div>
@@ -114,6 +124,31 @@ const TestimonialSlider = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+        <div className="mt-12 pt-6 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center text-xs gap-4">
+                      <div className="w-full">
+                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                          <div className="py-8 grid grid-cols-2 sm:grid-cols-4 place-items-center gap-8 sm:gap-12">
+                            {[logo1, logo2, logo3, logo4].map((src, i) => (
+                              <div
+                                key={i}
+                                className="aspect-square w-24 sm:w-20 md:w-28 flex items-center justify-center"
+                              >
+                                <img
+                                  src={src}
+                                  alt={`Partner Logo ${i + 1}`}
+                                  className={`max-h-full max-w-full object-contain opacity-95 hover:opacity-100 transition
+                                    ${i === 2 || i === 3 ? 'scale-90 sm:scale-95' : ''}`}
+                                  loading="lazy"
+                                  onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                                />
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+        
+                        
+                      </div>
+                    </div>
       </div>
 
       {/* Styling */}

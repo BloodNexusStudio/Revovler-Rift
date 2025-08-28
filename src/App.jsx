@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom"; // BrowserRouter is removed
 import Navbar from "./Components/Navbar/Navbar";
 import Hero from "./Components/Hero/Hero";
-import Hero2 from "./Components/Hero/Hero2";
 import Quotes from "./Components/Quotes/Quotes";
 import Banner from "./Components/Banner/Banner";
 import Banner2 from "./Components/Banner/Banner2";
@@ -16,6 +16,26 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Banner6 from "./Components/Banner/Banner6";
 import Banner7 from "./Components/Banner/Banner7";
+import Banner8 from "./Components/Banner/Banner8";
+import Banner9 from "./Components/Banner/Banner9";
+import Banner10 from "./Components/Banner/Banner10";
+import { NewsCardGrid, AllBlogsPage, BlogPostPage } from "./Components/Features/NewsCardGrid";
+import Showcase from "./Components/Showcase/Showcase";
+import Partners from "./Components/Partners/partners";
+import Contact from "./Components/Contact/Contact";
+import Shop from "./Components/Shop/Shop";
+
+// This component handles scrolling to the top of the page on route changes.
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
 const App = () => {
   const [isPlay, setIsPlay] = useState(false);
 
@@ -34,28 +54,59 @@ const App = () => {
   }, []);
 
   return (
-    <main className="overflow-x-hidden bg-white dark:bg-black text-black dark:text-white duration-300">
-      {/* <Navbar /> */}
-      <Hero togglePlay={togglePlay} /> 
-      {/* <Hero2 togglePlay={togglePlay} /> */}
-      <Quotes /> 
-      <Banner togglePlay={togglePlay} />
-      <Banner3 togglePlay={togglePlay} />
-      <Banner2 togglePlay={togglePlay} />
-      <Banner5 togglePlay={togglePlay}/>
-      {/* <Banner6 togglePlay={togglePlay}/> */}
-      {/* <div className="bg-black min-h-screen">
-      <Testimonials/>
-    </div> */}
-    <Testimonials/>
-      <Features />
-      {/* <AppStore />  */}
-      <Banner7 togglePlay={togglePlay}/>
-      <Footer />
-
-      {/* Video Player */}
-      <PopupPlayer isPlay={isPlay} togglePlay={togglePlay} />
-    </main>
+    // BrowserRouter is removed from here
+    <>
+      {/* Scroll to the top of the page whenever the route changes */}
+      <ScrollToTop />
+      <main className="overflow-x-hidden bg-white dark:bg-black text-black dark:text-white duration-300">
+        <Navbar />
+        <Routes>
+          {/* Home Page Route */}
+          <Route
+            path="/"
+            element={
+              <>
+                <Hero togglePlay={togglePlay} />
+                {/* <Banner togglePlay={togglePlay} /> */}
+                {/* <Banner8 togglePlay={togglePlay} /> */}
+                {/* <Banner9 togglePlay={togglePlay} /> */}
+                {/* <Banner10 togglePlay={togglePlay} /> */}
+                {/* <Banner3 togglePlay={togglePlay} /> */}
+                {/* <Banner2 togglePlay={togglePlay} /> */}
+                {/* <Testimonials /> */}
+                {/* <NewsCardGrid /> */}
+                {/* <Banner7 togglePlay={togglePlay} /> */}
+                {/* <Footer /> */}
+              </>
+            }
+          />
+          {/* Blog Routes */}
+          <Route path="/news" element={<Banner3 />} />
+          <Route path="/credits" element={
+            <>
+              <Testimonials />
+              <Banner7 />
+            </>
+          } />
+          <Route path="/showcase" element={<Showcase />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/partners" element={<Partners />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/content" element={
+            <>
+              <Banner />
+              <Banner8 />
+              <Banner9 />
+              <Banner10 />
+              <NewsCardGrid />
+            </>} />
+          
+          <Route path="/blogs" element={<AllBlogsPage />} />
+          <Route path="/blog/:blogId" element={<BlogPostPage />} />
+        </Routes>
+        <PopupPlayer isPlay={isPlay} togglePlay={togglePlay} />
+      </main>
+    </>
   );
 };
 

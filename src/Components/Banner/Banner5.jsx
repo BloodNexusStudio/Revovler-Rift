@@ -11,7 +11,7 @@ const Banner5 = () => {
             data-aos-delay="300"
             className="text-4xl sm:text-5xl md:text-6xl font-vintage font-bold tracking-wider text-[#e4d6c3]"
           >
-            Teaser Incoming — The Rift is Stirring
+            Teaser Incoming The Rift is Stirring
           </h1>
 
           {/* Body Text */}
@@ -29,7 +29,7 @@ const Banner5 = () => {
             data-aos-delay="550"
             className="text-base sm:text-lg leading-relaxed font-vintage text-[#d0c4b0]"
           >
-            This is only the beginning — more weapons, creatures, and high-value targets
+            This is only the beginning more weapons, creatures, and high-value targets
             will be revealed soon. The Closed Beta Tech Demo is coming fast, with limited
             slots for those who register in time.
           </p>
