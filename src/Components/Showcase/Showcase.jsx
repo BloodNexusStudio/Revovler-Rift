@@ -18,7 +18,7 @@ const Showcase = () => {
     "w-full object-cover h-48 sm:h-64  rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer";
 
   return (
-    <div
+    <section
       className="relative w-screen min-h-screen py-40 bg-cover bg-center"
       style={{ backgroundImage: `url(${bgImage})`,backgroundAttachment: "fixed", }}
     >
@@ -64,7 +64,7 @@ const Showcase = () => {
           />
         </div>
       )}
-    </div>
+    </section>
   );
 };
 

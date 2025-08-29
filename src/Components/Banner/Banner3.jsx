@@ -144,7 +144,6 @@ const CompactCard = ({
   image, badge, title, meta, excerpt, onOpen, className = ""
 }) => (
   <article
-   style={{ backgroundImage: `url(${bgImage})` }}
     onClick={onOpen}
  className={`inline-block overflow-hidden rounded-2xl bg-fixed bg-cover border border-white/10 bg-[#0a0a0a]
    shadow-2xl ring-1 ring-white/5 transition hover:border-white/20 cursor-pointer ${className}`}
@@ -192,10 +191,9 @@ const RiftCards = () => {
   const [openRight, setOpenRight] = useState(false);
 
   return (
-    <div className="min-h-screen w-screen">
-      <section className=" py-24  bg-cover bg-center bg-fixed flex flex-col  items-center"
-       style={{ backgroundImage: `url(${bgImage})` ,
-      backgroundSize: "100% 100%" }}
+   
+      <section className=' py-24  bg-cover bg-center bg-fixed flex flex-col  items-center '
+       style={{ backgroundImage: `url(${bgImage})` }}
       >
         <div className="mx-auto max-w-[1500px] px-8 md:px-12 lg:px-16">
           <h2 className="mb-12 text-center font-custom py-20 text-4xl md:text-5xl tracking-wide text-[#e4d6c3]">
@@ -281,7 +279,7 @@ const RiftCards = () => {
           </Modal>
         </div>
       </section>
-    </div>
+   
   );
 };
 

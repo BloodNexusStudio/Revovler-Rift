@@ -36,7 +36,7 @@ function Partners() {
 ];
 
     return(
-        <div className="min-h-screen w-full bg-fixed bg-cover overflow-x-hidden overflow-y-hidden py-20"
+        <section className="min-h-screen w-full bg-fixed bg-cover overflow-x-hidden overflow-y-hidden py-20"
 
          style={{ backgroundImage: `url(${bgImage})` }}
          >
@@ -103,7 +103,7 @@ function Partners() {
                     Apply now and become part of the Revolver Rift Partner Community!
                 </h2>
             </div>
-        </div>
+        </section>
     )
 }
 
