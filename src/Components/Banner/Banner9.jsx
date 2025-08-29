@@ -7,7 +7,7 @@ const Banner9 = () => {
 
   return (
     <div
-      className="relative w-full bg-black bg-cover bg-no-repeat"
+      className="relative w-full bg-black h-screen w-screen bg-cover  bg-no-repeat"
       style={{
         backgroundImage: `url(${poster})`,
         backgroundPosition: "80% 50%",
@@ -49,7 +49,7 @@ const Banner9 = () => {
              
 
               <div
-                data-aos="fade-up"
+                // data-aos="fade-up"
                 data-aos-delay="500"
                  className="text-base md:text-lg leading-relaxed text-gray-300 space-y-4 bg-left "
               >

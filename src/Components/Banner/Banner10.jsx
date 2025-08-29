@@ -7,7 +7,7 @@ const Banner10 = ({ togglePlay }) => {
 
   return (
     <div
-      className="relative w-full bg-black bg-cover bg-no-repeat overflow-hidden"
+      className="relative w-full bg-black h-screen w-screen bg-cover bg-no-repeat overflow-hidden"
       style={{
         backgroundImage: `url(${poster})`,
         backgroundPosition: "30% 80%",
@@ -41,7 +41,7 @@ const Banner10 = ({ togglePlay }) => {
               
 
               <div
-                data-aos="fade-up"
+                // data-aos="fade-up"
                 data-aos-delay="500"
                  className="text-base md:text-lg leading-relaxed text-gray-300 space-y-4 bg-left "
               >

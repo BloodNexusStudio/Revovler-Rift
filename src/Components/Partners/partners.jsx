@@ -36,7 +36,8 @@ function Partners() {
 ];
 
     return(
-        <div className="bg-black "
+        <div className="min-h-screen w-full bg-fixed bg-cover overflow-x-hidden overflow-y-hidden py-20"
+
          style={{ backgroundImage: `url(${bgImage})` }}
          >
             <div className="text-base md:text-lg pt-28  leading-relaxed text-gray-300 space-y-4 bg-left ">
@@ -58,7 +59,8 @@ function Partners() {
                 </div>
             </div>
             <div className="text-base md:text-lg pt-28  leading-relaxed text-gray-300 space-y-4 bg-left font-Inter">
-                <div className="flex flex-col md:flex-row justify-center gap-24 p-10 cursor-pointer">
+                <div className="flex flex-col md:flex-row justify-center gap-10 md:gap-24 p-10 cursor-pointer overflow-hidden">
+
                     {cardData.map((card, index) => (
                         <div
                         key={index}
@@ -79,7 +81,7 @@ function Partners() {
             </div>
             
             <div 
-             data-aos="fade-up"
+            //  data-aos="fade-up"
             className="text-base md:text-lg leading-relaxed text-gray-300 space-y-4 bg-left  text-white rounded-2xl shadow-lg p-6 text-center max-w-2xl mx-auto">
                 <h2 className="font-semibold font-custom text-[#e4d6c3] pt-28 pb-4 flex justify-center text-3xl md:text-4xl lg:text-5xl">
                     Application & Process

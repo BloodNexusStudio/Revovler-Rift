@@ -15,12 +15,12 @@ const Showcase = () => {
   const closeModal = () => setSelectedImage(null);
 
   const imageClass =
-    "w-full object-cover h-48 sm:h-64 rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer";
+    "w-full object-cover h-48 sm:h-64  rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer";
 
   return (
     <div
-      className="space-y-6 px-4 sm:px-6 bg-black pt-24 sm:pt-36"
-      style={{ backgroundImage: `url(${bgImage})`, backgroundSize: "cover" }}
+      className="relative w-screen min-h-screen py-40 bg-cover bg-center"
+      style={{ backgroundImage: `url(${bgImage})`,backgroundAttachment: "fixed", }}
     >
       {/* First Row */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">

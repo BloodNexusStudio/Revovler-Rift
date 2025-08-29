@@ -73,7 +73,7 @@ export const NewsCardGrid = () => {
   const displayedBlogs = NewsData.slice(0, 3);
 
   return (
-    <div className="w-full bg-black text-[#d1c7b7] pt-4 pb-0 "
+    <div className="w-full bg-black text-[#d1c7b7] pt-4 pb-0    w-screen bg-cover bg-fixed "
      style={{ backgroundImage: `url(${bgImage})` }}> 
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-center items-center mb-12 mt-0 py-20">
@@ -89,7 +89,7 @@ export const NewsCardGrid = () => {
             <Link
               to={`/blog/${news.id}`}
               key={news.id}
-              data-aos="fade-up"
+              // data-aos="fade-up"
               data-aos-delay={news.delay}
               className="group backdrop-blur-md bg-[rgba(40,30,30,0.4)] border border-[#5a3e3e40] transition-all rounded-xl overflow-hidden p-8 sm:py-12 duration-300 cursor-pointer"
             >
@@ -144,7 +144,7 @@ export const AllBlogsPage = () => {
   }, []);
 
   return (
-    <div className="w-full bg-black text-[#d1c7b7] pt-28 pb-20"
+    <div className="w-full bg-cover bg-fixed text-[#d1c7b7] pt-28 pb-20"
      style={{ backgroundImage: `url(${bgImage})` }}
     > {/* Changed pt-16 to pt-28 */}
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -221,7 +221,7 @@ export const BlogPostPage = () => {
 
   if (!blogPost) {
     return (
-      <div className="w-full bg-black text-[#d1c7b7] py-20 text-center"
+      <div className="w-full bg-cover bg-fixed text-[#d1c7b7] py-20 text-center"
        style={{ backgroundImage: `url(${bgImage})` }}
       >
         <h1
@@ -238,7 +238,7 @@ export const BlogPostPage = () => {
   }
 
   return (
-    <div className="w-full bg-black text-[#d1c7b7] pt-32 pb-20"
+    <div className="w-full  bg-cover bg-fixed text-[#d1c7b7] py-60 "
      style={{ backgroundImage: `url(${bgImage})` }}
      >
       <div className="max-w-screen-md mx-auto px-4 sm:px-6 lg:px-8">

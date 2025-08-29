@@ -51,7 +51,7 @@ const Modal = ({ open, onClose, title, image, children }) => {
   return (
     <div
       ref={overlayRef}
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 backdrop-blur-sm p-4"
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 h-screen w-screen bg-cover bg-fixed backdrop-blur-sm p-4"
       role="dialog"
       aria-modal="true"
       aria-labelledby="rr-modal-title"
@@ -59,8 +59,11 @@ const Modal = ({ open, onClose, title, image, children }) => {
       onClick={(e) => { if (e.target === overlayRef.current) onClose(); }}
     >
       <div 
-      className="relative w-full max-w-6xl overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] shadow-2xl ring-1 ring-white/5"
-      >
+  className="relative w-full max-w-6xl 2xl:max-w-[90vw] overflow-hidden 
+             rounded-2xl border border-white/10 bg-[#0a0a0a] 
+             shadow-2xl ring-1 ring-white/5"
+>
+
         <button
           ref={closeBtnRef}
           onClick={onClose}
@@ -72,10 +75,10 @@ const Modal = ({ open, onClose, title, image, children }) => {
 
         {/* Image left, content right; stacks on mobile */}
         <div className="grid grid-cols-1 md:grid-cols-2">
-          <div className="md:h-[520px]">
+          <div className="h-[60vh] 2xl:h-[70vh]">
             <ImgFill src={image} alt={title} />
           </div>
-          <div className="max-h-[70vh] md:max-h-[520px] overflow-y-auto p-6 sm:p-8">
+          <div className="max-h-[60vh] 2xl:max-h-[70vh] overflow-y-auto p-6 sm:p-8">
             <h3 id="rr-modal-title" className="font-vintage text-2xl sm:text-3xl text-[#e4d6c3]">
               {title}
             </h3>
@@ -96,7 +99,7 @@ const FeatureCard = ({
   <article
     onClick={onOpen}
      style={{ backgroundImage: `url(${bgImage})` }}
-     className={`inline-block overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a]
+     className={`inline-block overflow-hidden rounded-2xl  bg-cover bg-fixed border border-white/10 bg-[#0a0a0a]
    shadow-2xl ring-1 ring-white/5 transition hover:border-white/20 cursor-pointer ${className}`}
   >
     {/* Media column  equal height via flex */}
@@ -143,7 +146,7 @@ const CompactCard = ({
   <article
    style={{ backgroundImage: `url(${bgImage})` }}
     onClick={onOpen}
- className={`inline-block overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a]
+ className={`inline-block overflow-hidden rounded-2xl bg-fixed bg-cover border border-white/10 bg-[#0a0a0a]
    shadow-2xl ring-1 ring-white/5 transition hover:border-white/20 cursor-pointer ${className}`}
   >
     {/* Top banner image */}
@@ -189,97 +192,96 @@ const RiftCards = () => {
   const [openRight, setOpenRight] = useState(false);
 
   return (
-    <section className="bg-black py-24"
-     style={{ backgroundImage: `url(${bgImage})` }}
-    >
-      <div className="mx-auto max-w-[1500px] px-8 md:px-12 lg:px-16">
-        <h2 className="mb-12 text-center font-custom text-4xl md:text-5xl tracking-wide text-[#e4d6c3]">
-          Latest From The Rift
-        </h2>
-
-        {/* Equal heights on desktop */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 justify-items-center">
-          {/* Feature spans 2 cols */}
-          <div className="md:col-span-1 h-full">
-            <FeatureCard
-              image={FeatureImg}
-              category="FEATURE"
-              title={<span className="font-custom text-3xl">What Makes Revolver Rift Unique</span>}
-              // meta="a day ago"
-              excerpt="This is not your typical shooter. A war-torn 1944 collides with the supernatural two factions, evolving objectives, and choices with teeth."
-              onOpen={() => setOpenFeature(true)}
-              className="max-w-[450px]"
-              titleClassName="font-custom"
-            />
-          </div>
-
-          {/* Right card */}
-          <div className="md:col-span-1 h-full">
-            <CompactCard
-              image={CardImg1}
-              badge="FACTIONS"
-              title={<span className="font-custom text-3xl">When two forces clash, there is no mercy</span>}
-              excerpt="When the Rift tore open in 1944, Heaven and Hell sent their own soldiers. Two factions fight for relics, power, and the fate of mankind pick your side."
-              onOpen={() => setOpenRight(true)}
-             className="max-w-[450px] "
-            />
+    <div className="min-h-screen w-screen">
+      <section className=" py-24  bg-cover bg-center bg-fixed flex flex-col  items-center"
+       style={{ backgroundImage: `url(${bgImage})` ,
+      backgroundSize: "100% 100%" }}
+      >
+        <div className="mx-auto max-w-[1500px] px-8 md:px-12 lg:px-16">
+          <h2 className="mb-12 text-center font-custom py-20 text-4xl md:text-5xl tracking-wide text-[#e4d6c3]">
+            Latest From The Rift
+          </h2>
+          {/* Equal heights on desktop */}
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 justify-items-center pb-40">
+            {/* Feature spans 2 cols */}
+            <div className="md:col-span-1 h-full">
+              <FeatureCard
+                image={FeatureImg}
+                category="FEATURE"
+                title={<span className="font-custom text-3xl">What Makes Revolver Rift Unique</span>}
+                // meta="a day ago"
+                excerpt="This is not your typical shooter. A war-torn 1944 collides with the supernatural two factions, evolving objectives, and choices with teeth."
+                onOpen={() => setOpenFeature(true)}
+                className="max-w-[450px]"
+                titleClassName="font-custom"
+              />
+            </div>
+            {/* Right card */}
+            <div className="md:col-span-1 h-full">
+              <CompactCard
+                image={CardImg1}
+                badge="FACTIONS"
+                title={<span className="font-custom text-3xl">When two forces clash, there is no mercy</span>}
+                excerpt="When the Rift tore open in 1944, Heaven and Hell sent their own soldiers. Two factions fight for relics, power, and the fate of mankind pick your side."
+                onOpen={() => setOpenRight(true)}
+               className="max-w-[450px] "
+              />
+            </div>
           </div>
         </div>
-      </div>
-
-      {/* Feature modal */}
-      <Modal
-        open={openFeature}
-        onClose={() => setOpenFeature(false)}
-        title="What Makes Revolver Rift Unique"
-        image={FeatureImg}
-      >
-        <p><strong>This is not your typical shooter:</strong></p>
-        <ul className="list-disc pl-5 space-y-2">
-          <li><strong>Alternate History Warfare:</strong> Fight in a gritty, wartorn 1944 where the supernatural collides with World War II.</li>
-          <li><strong>Light vs. Darkness:</strong> Choose your side the righteous Cleric Deputys or the brutal Cursed Hell Deputys each with unique playstyles, Perks, and twisted morality.</li>
-          <li><strong>Catch the enemies:</strong> Track enemies by supernatural Perks, sound, skill, and strategy. Every fight is earned.</li>
-          <li><strong>Dynamic Objectives:</strong> Artifacts, VIP rescues, demonic bosses, anomalies, Arena, Rift Royal, Warmup only what you extract survives.</li>
-          <li><strong>Risk &amp; Power Systems:</strong> Devil’s Chair deals, Rift Storm chaos, and fate-shaping choices.</li>
-          <li><strong>Style Meets Grit:</strong> WWII weapons meet supernatural gear. Blood, tension, and tactical decisions define every moment.</li>
-        </ul>
-        <p className="mt-4">Enter the Rift. Fight for your soul. Extract or die trying.</p>
-      </Modal>
-
-      {/* Right card modal (now includes Hell Deputies too) */}
-      <Modal
-        open={openRight}
-        onClose={() => setOpenRight(false)}
-        title="Two Forces. No Mercy. Choose Your Side"
-        image={CardImg1}
-      >
-        <p>
-          When the Rift tore through reality in 1944, Heaven and Hell unleashed their own soldiers to claim what was left of Earth. Two factions now wage a brutal war for power, relics, and the fate of mankind.
-        </p>
-
-        {/* Cleric Deputies */}
-        <h4 className="mt-4 font-vintage text-xl text-[#e4d6c3]">The Cleric Deputies</h4>
-        <p>
-          Holy doesn’t mean gentle. The Clerics are Heaven’s chosen a militant order of righteous assassins sent to cleanse the Rift with fire, faith, and steel.
-        </p>
-        <ul className="mt-2 list-disc pl-5 space-y-1">
-          <li>Tactical, disciplined, and unforgiving</li>
-          <li>Blessed gear and sanctified abilities</li>
-          <li>Fight for purity or die trying</li>
-        </ul>
-
-        {/* Hell Deputies  ADDED */}
-        <h4 className="mt-6 font-vintage text-xl text-[#e4d6c3]">The Hell Deputies</h4>
-        <p className="mt-1">
-          <strong>Condemned. Released. Unleashed.</strong> Once damned souls, now Hell’s elite killers. The Hell Deputies are chaos made flesh brutal enforcers of infernal will, driven by vengeance and power. They strike without warning and kill without hesitation, wielding cursed tools and dark knowledge born in fire.
-        </p>
-        <ul className="mt-2 list-disc pl-5 space-y-1">
-          <li>Aggressive, relentless, and unpredictable</li>
-          <li>Demonic powers and cursed equipment</li>
-          <li>Fight for freedom or burn with the weak</li>
-        </ul>
-      </Modal>
-    </section>
+        {/* Feature modal */}
+        <div>
+          <Modal
+            open={openFeature}
+            onClose={() => setOpenFeature(false)}
+            title="What Makes Revolver Rift Unique"
+            image={FeatureImg}
+          >
+            <p><strong>This is not your typical shooter:</strong></p>
+            <ul className="list-disc pl-5 space-y-2">
+              <li><strong>Alternate History Warfare:</strong> Fight in a gritty, wartorn 1944 where the supernatural collides with World War II.</li>
+              <li><strong>Light vs. Darkness:</strong> Choose your side the righteous Cleric Deputys or the brutal Cursed Hell Deputys each with unique playstyles, Perks, and twisted morality.</li>
+              <li><strong>Catch the enemies:</strong> Track enemies by supernatural Perks, sound, skill, and strategy. Every fight is earned.</li>
+              <li><strong>Dynamic Objectives:</strong> Artifacts, VIP rescues, demonic bosses, anomalies, Arena, Rift Royal, Warmup only what you extract survives.</li>
+              <li><strong>Risk &amp; Power Systems:</strong> Devil’s Chair deals, Rift Storm chaos, and fate-shaping choices.</li>
+              <li><strong>Style Meets Grit:</strong> WWII weapons meet supernatural gear. Blood, tension, and tactical decisions define every moment.</li>
+            </ul>
+            <p className="mt-4">Enter the Rift. Fight for your soul. Extract or die trying.</p>
+          </Modal>
+          {/* Right card modal (now includes Hell Deputies too) */}
+          <Modal
+            open={openRight}
+            onClose={() => setOpenRight(false)}
+            title="Two Forces. No Mercy. Choose Your Side"
+            image={CardImg1}
+          >
+            <p>
+              When the Rift tore through reality in 1944, Heaven and Hell unleashed their own soldiers to claim what was left of Earth. Two factions now wage a brutal war for power, relics, and the fate of mankind.
+            </p>
+            {/* Cleric Deputies */}
+            <h4 className="mt-4 font-vintage text-xl text-[#e4d6c3]">The Cleric Deputies</h4>
+            <p>
+              Holy doesn’t mean gentle. The Clerics are Heaven’s chosen a militant order of righteous assassins sent to cleanse the Rift with fire, faith, and steel.
+            </p>
+            <ul className="mt-2 list-disc pl-5 space-y-1">
+              <li>Tactical, disciplined, and unforgiving</li>
+              <li>Blessed gear and sanctified abilities</li>
+              <li>Fight for purity or die trying</li>
+            </ul>
+            {/* Hell Deputies  ADDED */}
+            <h4 className="mt-6 font-vintage text-xl text-[#e4d6c3]">The Hell Deputies</h4>
+            <p className="mt-1">
+              <strong>Condemned. Released. Unleashed.</strong> Once damned souls, now Hell’s elite killers. The Hell Deputies are chaos made flesh brutal enforcers of infernal will, driven by vengeance and power. They strike without warning and kill without hesitation, wielding cursed tools and dark knowledge born in fire.
+            </p>
+            <ul className="mt-2 list-disc pl-5 space-y-1">
+              <li>Aggressive, relentless, and unpredictable</li>
+              <li>Demonic powers and cursed equipment</li>
+              <li>Fight for freedom or burn with the weak</li>
+            </ul>
+          </Modal>
+        </div>
+      </section>
+    </div>
   );
 };
 

@@ -7,7 +7,7 @@ const Banner = () => {
 
   return (
     <div
-      className="relative w-full bg-black bg-cover bg-no-repeat"
+      className="relative w-full bg-black h-screen w-screen bg-cover  bg-no-repeat"
       style={{
         backgroundImage: `url(${poster})`,
         backgroundPosition: "80% 50%",

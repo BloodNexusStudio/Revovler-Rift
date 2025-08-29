@@ -2,7 +2,7 @@ import bgImage from '../../assets/Texturelabs_Grunge_353M.jpg';
 
 function Shop(){
     return(
-        <div className="bg-black h-screen flex flex-col items-center justify-center text-center"
+        <div className="bg-black  h-screen w-screen bg-cover bg-fixed h-screen flex flex-col items-center justify-center text-center"
          style={{ backgroundImage: `url(${bgImage})` }}
         >
             <div className="font-semibold font-custom text-[#F5F5F5] px-60 text-3xl md:text-4xl lg:text-5xl space-y-2">

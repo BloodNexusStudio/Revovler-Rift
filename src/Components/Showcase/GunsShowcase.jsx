@@ -36,17 +36,18 @@ export default function GunsShowcase() {
 
   return (
     <div
-      className="bg-black py-6 relative"
+      className=" py-6 relative  "
       style={{
         backgroundImage: `url(${bgImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
+        backgroundAttachment: "fixed",
       }}
     >
       {/* Scrolling container */}
       <div
         ref={containerRef}
-        className="relative flex overflow-x-scroll no-scrollbar gap-4 px-4 sm:px-6"
+        className="relative flex bg-cover overflow-x-scroll no-scrollbar gap-4 px-4 sm:px-6"
         style={{ scrollBehavior: "auto", whiteSpace: "nowrap" }}
       >
         {weapons.concat(weapons).map((weapon, index) => (

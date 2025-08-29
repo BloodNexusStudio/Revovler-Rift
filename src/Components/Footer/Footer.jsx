@@ -116,7 +116,7 @@ const Footer = () => {
         <polygon fill="currentColor" points="0,100 100,0 100,100" />
       </svg>
 
-      <footer className=" text-white relative z-10"
+      <footer className=" text-white relative z-10 bg-cover bg-fixed"
         style={{ backgroundImage: `url(${bgImage})` }}
       >
         <div className="container mx-auto p-8 md:p-16 lg:p-20"

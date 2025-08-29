@@ -31,7 +31,7 @@ function Contact (){
             }
         };
     return(
-        <div className="bg-black py-48"
+        <div className="bg-black py-48 h-screen w-screen bg-cover bg-fixed"
          style={{ backgroundImage: `url(${bgImage})` }}
         >
            <form
