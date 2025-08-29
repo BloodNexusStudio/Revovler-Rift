@@ -45,7 +45,7 @@ function Partners() {
                 </h2>
                 <div className=" text-white rounded-2xl shadow-lg p-8 text-center max-w-2xl mx-auto">
                     <p>
-                        Become part of the <span className="font-bold text-[#AA0000]">Revolver Rift Community</span> 
+                        Become part of the <span className="font-bold text-[#AA0000]">Revolver Rift Community </span> 
                         and join us on our journey to make this game a global success!
                     </p>
                     <p className="mt-4">

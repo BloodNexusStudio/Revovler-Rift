@@ -60,7 +60,7 @@ const Footer = () => {
 
   const socialLinks = [
     {
-      href: 'https://discord.com',
+      href: 'https://discord.com/invite/QP6RmdUSA8',
       label: 'DISCORD',
       img: 'https://cdn-icons-png.flaticon.com/512/5968/5968756.png',
     },
@@ -90,7 +90,7 @@ const Footer = () => {
       img: 'https://cdn-icons-png.flaticon.com/512/1384/1384063.png',
     },
     {
-      href: 'mailto:contact@revolverrift.com',
+      href: 'mailto:info@revolver-rift.com',
       label: 'MAIL',
       img: 'https://cdn-icons-png.flaticon.com/512/732/732200.png',
     },

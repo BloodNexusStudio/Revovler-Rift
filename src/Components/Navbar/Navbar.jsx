@@ -205,13 +205,13 @@ const Navbar = () => {
 
             
           ))}
-          <a href="#" onClick={handleLinkClick}>
+          {/* <a href="#" onClick={handleLinkClick}>
             <img
               src={BuyTheGameButton}
               alt="Buy the Game"
               className="h-6 w-auto hover:scale-110 transition-transform duration-300" // Increased height
             />
-          </a>
+          </a> */}
         </div>
       </div>
     </header>

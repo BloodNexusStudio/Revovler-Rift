@@ -7,7 +7,7 @@ import weapon3 from "../../assets/newassets/Mosin Nagant 3.png";
 import weapon4 from "../../assets/newassets/p08 2.png";
 import weapon5 from "../../assets/newassets/trench gun 3.png";
 import weapon6 from "../../assets/newassets/WINCHESTER1.png";
-import bgImage from '../../assets/Texturelabs_Grunge_353M.jpg';
+import bgImage from "../../assets/Texturelabs_Grunge_353M.jpg";
 
 const weapons = [weapon1, weapon2, weapon3, weapon4, weapon5, weapon6];
 
@@ -35,17 +35,19 @@ export default function GunsShowcase() {
   }, []);
 
   return (
-    <div className="bg-black py-4 relative"
-    style={{ backgroundImage: `url(${bgImage})` }}
+    <div
+      className="bg-black py-6 relative"
+      style={{
+        backgroundImage: `url(${bgImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
     >
       {/* Scrolling container */}
       <div
         ref={containerRef}
-        className="relative flex overflow-x-scroll no-scrollbar gap-6 px-10"
-        style={{
-          scrollBehavior: "auto",
-          whiteSpace: "nowrap",
-        }}
+        className="relative flex overflow-x-scroll no-scrollbar gap-4 px-4 sm:px-6"
+        style={{ scrollBehavior: "auto", whiteSpace: "nowrap" }}
       >
         {weapons.concat(weapons).map((weapon, index) => (
           <motion.img
@@ -53,11 +55,13 @@ export default function GunsShowcase() {
             src={weapon}
             alt={`weapon-${index}`}
             onClick={() => setSelectedWeapon(weapon)}
-            className="object-contain cursor-pointer rounded-xl hover:scale-105 transition-transform duration-300"
+            className="cursor-pointer rounded-xl hover:scale-105 transition-transform duration-300 object-contain"
             style={{
-              width: "600px",
-              height: "300px",
+              width: "200px",
+              height: "150px",
             }}
+            // Responsive sizing
+            sizes="(max-width: 640px) 200px, (max-width: 1024px) 300px, 500px"
             initial={{ opacity: 1 }}
             animate={{ opacity: 1 }}
           />
@@ -73,7 +77,7 @@ export default function GunsShowcase() {
           <img
             src={selectedWeapon}
             alt="Selected Weapon"
-            className="max-w-5xl max-h-[90vh] rounded-lg shadow-lg transform scale-100 hover:scale-105 transition-transform duration-300"
+            className="max-w-[95%] max-h-[90vh] rounded-lg shadow-lg transition-transform duration-300"
           />
         </div>
       )}
