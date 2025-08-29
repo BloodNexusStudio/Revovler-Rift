@@ -21,13 +21,15 @@ const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [clicked, setClicked] = useState(false);
+  const [activeLink, setActiveLink] = useState("/"); // Track active link
 
   const toggleMenu = () => {
     setShowMenu((prev) => !prev);
     document.body.style.overflow = showMenu ? "auto" : "hidden";
   };
 
-  const handleLinkClick = () => {
+  const handleLinkClick = (link) => {
+    setActiveLink(link);
     setShowMenu(false);
     document.body.style.overflow = "auto";
   };
@@ -68,95 +70,20 @@ const Navbar = () => {
         >
         <div className="hidden flex justify-center md:flex items-center gap-10"> 
 
-          <ul className="flex items-center gap-10"> 
-              <li 
-      //         onClick={() => setClicked(!clicked)}
-      //  className={`cursor-pointer ${clicked ? "text-gray-500" : "text-white"}`}
-              >
-                <Link to="/" className="group flex items-center"> 
-                  
-                  <button className="font-custom text-2xl hover:scale-110 
-                          transition-transform duration-300 drop-shadow">
-                            Home
-                  </button>
-                </Link>
-              </li>
-              
-              <li  className="flex items-center">
-                <Link to="/news" className="group flex items-center"> 
-                  
-                  <button className="font-custom text-2xl hover:scale-110 
-                          transition-transform duration-300 drop-shadow">
-                            News
-                  </button>
-                </Link>
-              </li>
-              <li  className="flex items-center">
-                <Link to="/credits" className="group flex items-center"> 
-                  
-                  <button className="font-custom text-2xl hover:scale-110 
-                          transition-transform duration-300 drop-shadow">
-                            credits
-                  </button>
-                </Link>
-              </li>
-              <li  className="flex items-center">
-                <Link to="/showcase" className="group flex items-center">
-                  
-                  <button className="font-custom text-2xl hover:scale-110 
-                          transition-transform duration-300 drop-shadow">
-                            Showcase
-                  </button>
-                </Link>
-              </li>
-              <li  className="flex items-center">
-                <Link to="/content" className="group flex items-center"> 
-                  
-                  <button className="font-custom text-2xl hover:scale-110 
-                          transition-transform duration-300 drop-shadow">
-                            Content
-                  </button>
-                </Link>
-              </li>
-              <li  className="flex items-center">
-                <Link to="/partners" className="group flex items-center">
-                  
-                  <button className="font-custom text-2xl hover:scale-110 
-                          transition-transform duration-300 drop-shadow">
-                            Partners
-                  </button>
-                </Link>
-              </li>
-              <li  className="flex items-center">
-                <Link to="/shop" className="group flex items-center"> 
-                  
-                  <button className="font-custom text-2xl hover:scale-110 
-                          transition-transform duration-300 drop-shadow">
-                            Shop
-                  </button>
-                </Link>
-              </li>
-              <li  className="flex items-center">
-                <Link to="/contact" className="group flex items-center"> 
-                  
-                  <button className="font-custom text-2xl hover:scale-110 
-                          transition-transform duration-300 drop-shadow">
-                            Contact Us
-                  </button>
-                </Link>
-              </li>
-              {/* <li  className="flex items-center">
-                <Link to="https://store.steampowered.com/" className="group flex items-center">
-                  
-                  <button className="font-custom text-3xl hover:scale-110 
-                          transition-transform duration-300 drop-shadow">
-                            Wishlist
-                  </button>
-                </Link>
-              </li> */}
-              
-              
-          </ul>
+        <ul className="flex items-center gap-10">
+          {NavLinks.map(({ id, name, link }) => (
+            <li key={id} className="flex items-center">
+              <Link to={link} onClick={() => handleLinkClick(link)}>
+                <button
+                  className={`font-custom text-2xl transition-transform duration-300 drop-shadow hover:scale-110 
+                    ${activeLink === link ? "border-b-4 border-white" : "text-white"}`}
+                >
+                  {name}
+                </button>
+              </Link>
+            </li>
+          ))}
+        </ul>
              {/* ))}  */}
 
           {/* <a href="#" className="ml-3 flex items-center ">
@@ -191,19 +118,15 @@ const Navbar = () => {
       >
         <div className="flex flex-col items-center py-3 gap-2 bg-black"> {/* Increased vertical padding and gap */}
           {NavLinks.map(({ id, name, link }) => (
-            <div className="font-custom text-lg">
+            <div key={id} className="font-custom text-lg">
               <Link
-                key={id}
                 to={link}
-                onClick={handleLinkClick}
-                className="block"
+                onClick={() => handleLinkClick(link)}
+                className={`${activeLink === link ? "text-green-500" : "text-white"} block`}
               >
-               {name}
-               </Link>
-              
+                {name}
+              </Link>
             </div>
-
-            
           ))}
           {/* <a href="#" onClick={handleLinkClick}>
             <img
