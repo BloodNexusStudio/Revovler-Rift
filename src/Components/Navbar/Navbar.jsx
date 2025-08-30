@@ -7,13 +7,13 @@ import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
 const NavLinks = [
   { id: 1, name: "Home", link: "/" },
-  { id: 1, name: "News", link: "/news" },
-  { id: 1, name: "Credits", link: "/credits" },
-  { id: 1, name: "Showcase", link: "/showcase" },
-  { id: 1, name: "Content", link: "/content" },
-  { id: 1, name: "Partners", link: "/partners" },
-  { id: 1, name: "Shop", link: "/shop" },
-  { id: 1, name: "Contact", link: "/contact" },
+  { id: 2, name: "News", link: "/news" },
+  { id: 3, name: "Credits", link: "/credits" },
+  { id: 4, name: "Showcase", link: "/showcase" },
+  { id: 5, name: "Content", link: "/content" },
+  { id: 6, name: "Partners", link: "/partners" },
+  { id: 7, name: "Shop", link: "/shop" },
+  { id: 8, name: "Contact", link: "/contact" },
 
 ];
 
@@ -122,7 +122,9 @@ const Navbar = () => {
               <Link
                 to={link}
                 onClick={() => handleLinkClick(link)}
-                className={`${activeLink === link ? "text-green-500" : "text-white"} block`}
+                className={`block text-white pb-1 ${
+                  activeLink === link ? "border-b-4 border-white" : "border-b-0"
+                }`}
               >
                 {name}
               </Link>

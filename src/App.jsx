@@ -85,7 +85,7 @@ const App = () => {
           <Route path="/credits" element={
             <>
               <Testimonials />
-              <Banner7 />
+              {/* <Banner7 /> */}
             </>
           } />
           <Route path="/showcase" element={<Showcase />} />

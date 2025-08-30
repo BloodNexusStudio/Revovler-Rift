@@ -36,7 +36,7 @@ function Partners() {
 ];
 
     return(
-        <section className="min-h-screen w-full bg-fixed bg-cover overflow-x-hidden overflow-y-hidden py-20"
+        <section className="min-h-screen w-full bg-fixed bg-cover overflow-x-hidden  py-20"
 
          style={{ backgroundImage: `url(${bgImage})` }}
          >

@@ -50,11 +50,11 @@ const Banner = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-28 items-center w-full">
           {/* text content section */}
           <div className="lg:pr-10 px-2">
-            <div className="space-y-6 text-center">
+            <div className="space-y-6 text-center ">
               <h1
                 data-aos="fade-up"
                 data-aos-delay="300"
-                className="text-3xl md:text-4xl lg:text-5xl font-custom tracking-wide text-[#e4d6c3]"
+                className="text-3xl md:text-4xl lg:text-5xl font-custom tracking-wide pt-28 text-[#e4d6c3]"
               >
                 Welcome to the Rift
               </h1>

@@ -21,6 +21,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
 import bgImage from '../../assets/Texturelabs_Grunge_353M.jpg';
+import Banner7 from "../Banner/Banner7";
 
 const testimonials = [
   { id: 1, name: "Lead Narrative Designer", quote: "Sometimes we scream ideas across the room like maniacs and that’s how a Devil Chair is born." },
@@ -38,7 +39,7 @@ const TestimonialSlider = () => {
     className="
     w-full min-h-screen  bg-cover bg-fixed flex flex-col  items-center bg-black text-white 
     px-4 
-    pt-28 sm:pt-16 md:pt-40 pb-
+    pt-28 sm:pt-16 md:pt-40 
   ">
       {/* Header */}
       <div className="w-full max-w-5xl text-center mb-10 md:mb-16 px-2 sm:px-4">
@@ -152,11 +153,14 @@ const TestimonialSlider = () => {
   </div>
 </div>
 
+        <div className="">
+          <Banner7 />
+        </div>
       </div>
 
       {/* Styling */}
       <style>{`
-        .swiper { overflow: visible; }
+        .swiper { overflow: hidden; }
         .swiper-slide {
           transition: transform .45s ease, opacity .45s ease, filter .45s ease;
           transform: scale(.90);

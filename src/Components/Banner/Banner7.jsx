@@ -3,7 +3,7 @@ import bgImage from '../../assets/Texturelabs_Grunge_353M.jpg';
 
 const Banner7 = () => {
   return (
-    <div className="relative bg-black  w-screen bg-cover bg-fixed flex items-center justify-center min-h-screen  pb-12 px-4 sm:px-6 lg:px-8"
+    <div className="relative bg-black  w-full bg-cover bg-fixed flex items-center justify-center min-h-screen  pb-12 px-4 sm:px-6 lg:px-8"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       <div className="max-w-5xl mx-auto w-full">

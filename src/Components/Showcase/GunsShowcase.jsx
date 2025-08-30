@@ -47,7 +47,7 @@ export default function GunsShowcase() {
       {/* Scrolling container */}
       <div
         ref={containerRef}
-        className="relative flex bg-cover overflow-x-scroll no-scrollbar gap-4 px-4 sm:px-6"
+        className="relative flex bg-cover overflow-hidden no-scrollbar gap-4 px-4 sm:px-6"
         style={{ scrollBehavior: "auto", whiteSpace: "nowrap" }}
       >
         {weapons.concat(weapons).map((weapon, index) => (
