@@ -4,7 +4,7 @@ import logo1 from "../../assets/logo/Logo1.png";
 import logo2 from "../../assets/logo/Logo2.png";
 import logo3 from "../../assets/logo/Logo3.png";
 import logo4 from "../../assets/logo/Logo4.png";
-import bgImage from '../../assets/Texturelabs_Grunge_353M.jpg';
+import bgImage from '../../assets/Texturelabs_Grunge_353M.webp';
 
 const SocialLink = ({ href, imgSrc, label, onClick }) => {
   const ref = useRef(null);

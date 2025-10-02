@@ -1,5 +1,5 @@
 import React from "react";
-import poster from "../../assets/content1.png";
+import poster from "../../assets/content2.webp";
 import bgImage from '../../assets/Texturelabs_Grunge_353M.jpg';
 
 const Banner10 = ({ togglePlay }) => {

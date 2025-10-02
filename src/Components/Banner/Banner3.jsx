@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-import bgImage from '../../assets/Texturelabs_Grunge_353M.jpg';
+import bgImage from '../../assets/Texturelabs_Grunge_353M.webp';
 
 // === Replace these with your actual asset paths ===
-import FeatureImg from "../../assets/newassets/9.png";
-import CardImg1 from "../../assets/newassets/7.png";
+import FeatureImg from "../../assets/newassets/9.webp";
+import CardImg1 from "../../assets/newassets/7.webp";
 
 // --- Small UI bits ---
 const Badge = ({ children }) => (
@@ -98,7 +98,7 @@ const FeatureCard = ({
 }) => (
   <article
     onClick={onOpen}
-     style={{ backgroundImage: `url(${bgImage})` }}
+    //  style={{ backgroundImage: `url(${bgImage})` }}
      className={`inline-block overflow-hidden rounded-2xl  bg-cover bg-fixed border border-white/10 bg-[#0a0a0a]
    shadow-2xl ring-1 ring-white/5 transition hover:border-white/20 cursor-pointer ${className}`}
   >

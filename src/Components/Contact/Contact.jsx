@@ -1,6 +1,6 @@
 import Footer from "../Footer/Footer";
 import { useState } from "react";
-import bgImage from '../../assets/Texturelabs_Grunge_353M.jpg';
+import bgImage from '../../assets/Texturelabs_Grunge_353M.webp';
 
 
 function Contact (){

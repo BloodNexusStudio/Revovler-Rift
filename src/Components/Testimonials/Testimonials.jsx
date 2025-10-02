@@ -20,7 +20,7 @@ import logo4 from "../../assets/logo/Logo4.png";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
-import bgImage from '../../assets/Texturelabs_Grunge_353M.jpg';
+import bgImage from '../../assets/Texturelabs_Grunge_353M.webp';
 import Banner7 from "../Banner/Banner7";
 
 const testimonials = [

@@ -10,7 +10,7 @@ import img1 from "../../assets/newassets/colt 19111.png";
 import img2 from "../../assets/newassets/trench gun 3.png";
 import img3 from "../../assets/newassets/p08 2.png";
 import img4 from "../../assets/newassets/Mosin Nagant 3.png";
-import bgImage from '../../assets/Texturelabs_Grunge_353M.jpg';
+import bgImage from '../../assets/Texturelabs_Grunge_353M.webp';
 
 // ===================================
 // News Data (Modified)

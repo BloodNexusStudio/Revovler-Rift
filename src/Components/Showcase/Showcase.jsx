@@ -1,12 +1,12 @@
 import { useState } from "react";
 import GunsShowcase from "./GunsShowcase";
 
-import image6 from "../../assets/shot2.1.png";
-import image7 from "../../assets/shot2.png";
-import image8 from "../../assets/newassets/9.png";
-import image9 from "../../assets/newassets/2.png";
-import image10 from "../../assets/newassets/6.png";
-import bgImage from "../../assets/Texturelabs_Grunge_353M.jpg";
+import image6 from "../../assets/shot2.1.webp";
+import image7 from "../../assets/shot2.webp";
+import image8 from "../../assets/newassets/9.webp";
+import image9 from "../../assets/newassets/2.webp";
+import image10 from "../../assets/newassets/6.webp";
+import bgImage from "../../assets/Texturelabs_Grunge_353M.webp";
 
 const Showcase = () => {
   const [selectedImage, setSelectedImage] = useState(null);

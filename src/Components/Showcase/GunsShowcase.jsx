@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
-import weapon1 from "../../assets/newassets/colt 19111.png";
-import weapon2 from "../../assets/newassets/ice pick 3.png";
-import weapon3 from "../../assets/newassets/Mosin Nagant 3.png";
-import weapon4 from "../../assets/newassets/p08 2.png";
-import weapon5 from "../../assets/newassets/trench gun 3.png";
-import weapon6 from "../../assets/newassets/WINCHESTER1.png";
-import bgImage from "../../assets/Texturelabs_Grunge_353M.jpg";
+import weapon1 from "../../assets/newassets/colt 19111.webp";
+import weapon2 from "../../assets/newassets/ice pick 3.webp";
+import weapon3 from "../../assets/newassets/Mosin_Nagant_3.webp";
+import weapon4 from "../../assets/newassets/p08_2.webp";
+import weapon5 from "../../assets/newassets/trench_gun_3.webp";
+import weapon6 from "../../assets/newassets/WINCHESTER1.webp";
+import bgImage from "../../assets/Texturelabs_Grunge_353M.webp";
 
 const weapons = [weapon1, weapon2, weapon3, weapon4, weapon5, weapon6];
 

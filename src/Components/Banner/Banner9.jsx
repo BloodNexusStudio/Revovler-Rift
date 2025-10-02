@@ -1,5 +1,5 @@
 import React from "react";
-import poster from "../../assets/content3.png";
+import poster from "../../assets/content3.webp";
 import bgImage from '../../assets/Texturelabs_Grunge_353M.jpg';
 
 const Banner9 = () => {
